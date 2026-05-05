@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.SignUpController">
+   <children>
+      <AnchorPane layoutX="219.0" layoutY="10.0" prefHeight="574.0" prefWidth="483.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+         <children>
+            <HBox layoutX="80.0" layoutY="46.0" prefHeight="94.0" prefWidth="316.0">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/Logo%20+%20Name%20+%20Motto%20(Horizonal).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox layoutX="209.0" layoutY="122.0" />
+            <HBox layoutX="90.0" layoutY="155.208984375" />
+            <TextField fx:id="firstName" layoutX="61.0" layoutY="205.0" prefHeight="36.0" prefWidth="176.0" promptText="Enter first name" />
+            <Label layoutX="61.0" layoutY="177.0" text="First Name">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="396.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="61.0" layoutY="424.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter password here" />
+            <CheckBox fx:id="privacyCheckBox" layoutX="146.0" layoutY="473.0" mnemonicParsing="false" text="I Agree with privacy and policy" />
+            <Button layoutX="71.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleCreateaccount" prefHeight="36.0" prefWidth="335.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" text="Create account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <HBox layoutX="148.0" layoutY="518.0" />
+            <TextField fx:id="lastName" layoutX="244.0" layoutY="205.0" prefHeight="36.0" prefWidth="176.0" promptText="Enter last name" />
+            <Label layoutX="244.0" layoutY="177.0" text="Last Name">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="email" layoutX="61.0" layoutY="278.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter your email" />
+            <Label layoutX="61.0" layoutY="250.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="189.0" layoutY="137.0" prefHeight="36.0" prefWidth="104.0" text="Sign Up">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="phone" layoutX="61.0" layoutY="354.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter phone number" />
+            <Label layoutX="61.0" layoutY="326.0" text="Phone Number">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="152.0" layoutY="539.0">
+               <children>
+                  <Label text="Already have an account?" textFill="GREEN" />
+                  <Hyperlink onAction="#signIn" text="Sign in" textFill="#ff7700" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

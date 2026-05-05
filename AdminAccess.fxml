@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.AdminAccessController">
+   <children>
+      <Button layoutX="239.0" layoutY="24.0" mnemonicParsing="false" onAction="#backButton" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true">
+               <image>
+                  <Image url="@IMAGES/arrow-left-line%20(3).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <AnchorPane layoutX="246.0" layoutY="56.0" prefHeight="489.0" prefWidth="408.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+         <children>
+            <Circle accessibleRole="IMAGE_VIEW" fill="#dffff2" layoutX="204.0" layoutY="100.0" radius="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <ImageView fitHeight="62.0" fitWidth="47.0" layoutX="181.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMAGES/icons8-lock-48.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" layoutX="104.0" layoutY="162.0">
+               <children>
+                  <Label text="Admin Access" textFill="#147211">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label text="Enter your password to continue">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="42.0" layoutY="237.0" spacing="15.0">
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <VBox spacing="5.0">
+                           <children>
+                              <Label text="Password">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="passwordField" prefHeight="34.0" prefWidth="317.0" promptText="Enter admin password" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <Hyperlink onAction="#handleForgotPassword" text="Forgot Password?" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Button mnemonicParsing="false" onAction="#handleLogin" prefHeight="34.0" prefWidth="317.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 7;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

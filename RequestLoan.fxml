@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.RequestLoanController">
+   <children>
+      <Button contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" layoutX="124.0" layoutY="12.0" mnemonicParsing="false" onAction="#backButton" prefHeight="20.0" prefWidth="24.0" style="-fx-background-color: transparent;;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMAGES/arrow-left-line%20(3).png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fill="#1d7222" layoutX="159.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Request Loan">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="125.0" layoutY="46.0" prefHeight="514.0" prefWidth="652.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+         <children>
+            <VBox layoutX="34.0" layoutY="28.892578125">
+               <children>
+                  <Label text="First Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstNameField" prefHeight="32.0" prefWidth="269.0" promptText="Enter first name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="328.0" layoutY="28.892578125">
+               <children>
+                  <Label text="Last Name">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lastNameField" prefHeight="32.0" prefWidth="269.0" promptText="Enter last name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="34.0" layoutY="98.0">
+               <children>
+                  <Label text="Phone Number">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneNumberField" prefHeight="32.0" prefWidth="269.0" promptText="Enter phone number">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="328.0" layoutY="97.892578125">
+               <children>
+                  <Label text="Email Address">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emailAddressField" prefHeight="32.0" prefWidth="269.0" promptText="Enter email address">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="34.0" layoutY="163.0">
+               <children>
+                  <Label text="Home Address">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="homeAddressField" prefHeight="32.0" prefWidth="565.0" promptText="Enter home address">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="34.0" layoutY="223.0">
+               <children>
+                  <Label text="Loan Amount (₦)">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="loanAmountField" prefHeight="32.0" prefWidth="269.0" promptText="Enter amount">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox layoutX="328.0" layoutY="223.0">
+               <children>
+                  <Label text="Duration">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="durationBox" prefHeight="32.0" prefWidth="269.0" promptText="Select Duration" />
+               </children>
+            </VBox>
+            <Button layoutX="33.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleCalculate" prefHeight="37.0" prefWidth="284.0" style="-fx-background-color: #008000; -fx-cursor: hand;;" text="Calculate" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/calculator%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="329.0" layoutY="287.0" mnemonicParsing="false" onAction="#handleSubmitLoan" prefHeight="37.0" prefWidth="269.0" style="-fx-background-color: #ff4d00; -fx-cursor: hand;" text="Submit Loan " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/icons8-sent-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Separator layoutX="37.0" layoutY="329.0" prefHeight="8.0" prefWidth="565.0" />
+            <VBox layoutX="37.0" layoutY="344.576171875">
+               <children>
+                  <Label text="Calculated Results :">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Pane prefHeight="165.0" prefWidth="565.0" style="-fx-background-color: #f2fef5;">
+                     <children>
+                        <VBox layoutX="21.0" layoutY="21.8134765625">
+                           <children>
+                              <Label text="Total Interest">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="totalInterestText" fill="#119725" strokeType="OUTSIDE" strokeWidth="0.0" text="₦0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="21.0" layoutY="88.8134765625">
+                           <children>
+                              <Label text="Monthly Payment">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="monthlyPaymentText" fill="#119725" strokeType="OUTSIDE" strokeWidth="0.0" text="₦0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="285.0" layoutY="21.8134765625">
+                           <children>
+                              <Label text="Total Repayment">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="totalRepaymentText" fill="#119725" strokeType="OUTSIDE" strokeWidth="0.0" text="₦0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="285.0" layoutY="88.8134765625">
+                           <children>
+                              <Label text="Repayment Date">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="repaymentDateText" fill="#119725" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

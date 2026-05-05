@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.LoginController">
+   <children>
+      <AnchorPane layoutX="209.0" layoutY="15.0" prefHeight="574.0" prefWidth="483.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+         <children>
+            <HBox layoutX="80.0" layoutY="46.0" prefHeight="94.0" prefWidth="316.0">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/Logo%20+%20Name%20+%20Motto%20(Horizonal).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox layoutX="209.0" layoutY="122.0">
+               <children>
+                  <Label text="Login">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="90.0" layoutY="155.208984375">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your reliable money mate for instant cash when sapa dey show face, fast approval, gentle repayment, no long talk." textAlignment="CENTER" wrappingWidth="289.0422058105469">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <TextField fx:id="email" layoutX="62.0" layoutY="246.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter your email" />
+            <Label layoutX="62.0" layoutY="218.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="62.0" layoutY="299.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="61.0" layoutY="327.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter your password" />
+            <Hyperlink layoutX="297.0" layoutY="372.0" onAction="#forgotLogin" text="Forgetten Password?" textFill="#348031" />
+            <Button layoutX="70.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="36.0" prefWidth="335.0" style="-fx-background-color: #008000;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Separator layoutX="78.0" layoutY="459.0" prefHeight="9.0" prefWidth="139.0" />
+            <Separator layoutX="237.0" layoutY="459.0" prefHeight="9.0" prefWidth="160.0" />
+            <Label layoutX="222.0" layoutY="451.0" text="or" />
+            <Button layoutX="124.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/icons8-google-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="180.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/icons8-apple-24.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="237.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/icons8-instagram-logo-94.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="293.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMAGES/icons8-facebook-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <HBox layoutX="148.0" layoutY="518.0">
+               <children>
+                  <Hyperlink onAction="#signUp" text="Don't have an Account? Sign up" textFill="GREEN" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
