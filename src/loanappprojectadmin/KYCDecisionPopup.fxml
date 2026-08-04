@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="386.0" prefWidth="294.0" style="-fx-background-color: white;; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappprojectadmin.KYCDecisionPopupController">
+    <children>
+        <Label layoutX="25.0" layoutY="18.0" text="Review KYC Submission">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <HBox layoutX="25.0" layoutY="55.0">
+            <children>
+                <Label text="Applicant:" textFill="#978a8a" />
+            </children>
+        </HBox>
+        <VBox layoutX="90.0" layoutY="55.05078125">
+            <children>
+                <Text fx:id="applicantText" strokeType="OUTSIDE" strokeWidth="0.0" />
+            </children>
+        </VBox>
+        <HBox layoutX="25.0" layoutY="78.0">
+            <children>
+                <Label text="ID Type:" textFill="#978a8a" />
+            </children>
+        </HBox>
+        <VBox layoutX="90.0" layoutY="78.05078125">
+            <children>
+                <Text fx:id="idTypeText" strokeType="OUTSIDE" strokeWidth="0.0" />
+            </children>
+        </VBox>
+
+        <HBox layoutX="25.0" layoutY="101.0">
+            <children>
+                <Label text="Purpose:" textFill="#978a8a" />
+            </children>
+        </HBox>
+        <VBox layoutX="90.0" layoutY="101.05078125">
+            <children>
+                <Text fx:id="loanPurposeText" strokeType="OUTSIDE" strokeWidth="0.0" />
+            </children>
+        </VBox>
+
+        <HBox layoutX="25.0" layoutY="124.0">
+            <children>
+                <Label text="Income:" textFill="#978a8a" />
+            </children>
+        </HBox>
+        <VBox layoutX="90.0" layoutY="124.05078125">
+            <children>
+                <Text fx:id="monthlyIncomeText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.0" />
+            </children>
+        </VBox>
+
+        <!-- Thumbnail preview of the uploaded ID image - click to see it full size -->
+        <Label layoutX="25.0" layoutY="152.0" text="Uploaded ID:" textFill="#978a8a" />
+        <ImageView fx:id="idImageView" fitHeight="120.0" fitWidth="244.0" layoutX="25.0" layoutY="174.0" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" />
+        <Label fx:id="noImageLabel" layoutX="25.0" layoutY="174.0" text="No image on file" textFill="#aaaaaa" visible="false" />
+
+        <Button defaultButton="true" layoutX="27.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleVerify" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #008000; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" text="Verify" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="10.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+        <Button layoutX="154.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleReject" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" text="Reject" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="10.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+    </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/LoanAppProject/src/loanappproject/DBConnect.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/LoanAppProject.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ForgotLoginController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ForgotPasswordController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ForgotPassword.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/LoanDetailsController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/DecisionPopup.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/AdminDashboardController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/LoginController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/AdminDashboard.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/AdminAccessController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/AdminAccess.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/AllFieldsRequired.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/CalculateRequiredFields.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/Dashboard.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/DashboardController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/DatabaseError.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/DecisionPopupController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/FPInvalidInput.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/FieldRequired.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ForgotLogin.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/IncorrectPassword.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/InvalidEmail.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/InvalidPhone.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/Loan.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/LoanDetails.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/LoanService.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/Login.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/Logout.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/LogoutController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/MyLoan.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/MyLoanController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/MyLoanSuccess.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/MyLoanSuccessController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/RequestLoan.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/RequestLoanController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ResetLogin.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ResetLoginController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ResetPassword.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/ResetPasswordController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/Session.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/SignUp.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/SignUpController.java</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/Welcome.fxml</file>
+            <file>file:/E:/LoanAppProject/src/loanappproject/WelcomeController.java</file>
+        </group>
+    </open-files>
+</project-private>

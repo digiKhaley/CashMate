@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="cardContainer" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappprojectadmin.AdminAccessController">
+    <children>
+
+        <!-- StackPane fills the entire window (all 4 anchors = 0) and
+             auto-centers its child, both horizontally and vertically,
+             at any window size. This replaces the old fixed layoutX/layoutY card. -->
+        <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox alignment="CENTER" maxHeight="500.0" maxWidth="408.0" minHeight="100.0" minWidth="300.0" prefHeight="100.0" prefWidth="${cardContainer.width * 0.45}" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+                    <children>
+
+                        <!-- Icon + circle background, overlaid via StackPane instead of absolute x/y -->
+                        <StackPane>
+                            <children>
+                                <Circle accessibleRole="IMAGE_VIEW" fill="#dffff2" radius="44.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                                <ImageView fitHeight="62.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../loanappproject/IMAGES/icons8-lock-48.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </StackPane>
+
+                        <VBox alignment="CENTER">
+                            <children>
+                                <Label text="Admin Access" textFill="#147211">
+                                    <font>
+                                        <Font name="System Bold" size="23.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Enter your password to continue">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="15.0">
+                            <children>
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <VBox spacing="5.0">
+                                            <children>
+                                                <Label text="Password">
+                                                    <font>
+                                                        <Font name="System Bold" size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <PasswordField fx:id="passwordField" maxWidth="Infinity" prefHeight="34.0" promptText="Enter admin password" />
+                                            </children>
+                                        </VBox>
+                                        <HBox alignment="CENTER_RIGHT">
+                                            <children>
+                                                <Hyperlink onAction="#handleForgotPassword" text="Forgot Password?" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <Button defaultButton="true" maxWidth="Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="34.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 7;" text="Login" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+
+    </children>
+</AnchorPane>
