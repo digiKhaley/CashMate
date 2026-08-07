@@ -78,11 +78,11 @@ Open `loanappproject` in NetBeans (or your Ant-compatible IDE) and run `LoanAppP
 <img width="1920" height="1048" alt="image" src="https://github.com/user-attachments/assets/d12b0f82-3611-499d-a465-2bb0ac50f377" />
 <img width="1920" height="1047" alt="image" src="https://github.com/user-attachments/assets/fcca1d92-0b1a-474e-a0a3-c7b36a718592" />
 <img width="1920" height="1046" alt="image" src="https://github.com/user-attachments/assets/3050cbe8-06da-420d-91d8-da6315d17319" />
-<img width="1920" height="1043" alt="image" src="https://github.com/user-attachments/assets/53a65bb3-0124-4c28-b703-7b3250d03ad7" />
-<img width="1920" height="1046" alt="Screenshot 2026-08-07 015940" src="https://github.com/user-attachments/assets/14bb4ecd-220d-43d3-a64a-2c6ecb38eb9e" />
 <img width="1920" height="1047" alt="image" src="https://github.com/user-attachments/assets/d28b58a5-3717-45fb-a150-f25783d9495b" />
 <img width="1920" height="1046" alt="image" src="https://github.com/user-attachments/assets/365f90be-9c04-4384-94ac-2e9bdd6351dd" />
 <img width="1920" height="1045" alt="image" src="https://github.com/user-attachments/assets/8e923129-d159-4d9c-a34e-b8358a77d15c" />
 <img width="1920" height="1047" alt="image" src="https://github.com/user-attachments/assets/a8e96484-9eb8-4283-8a33-b0af734ee8f1" />
+<img width="1920" height="1046" alt="Screenshot 2026-08-07 015940" src="https://github.com/user-attachments/assets/14bb4ecd-220d-43d3-a64a-2c6ecb38eb9e" />
+<img width="1920" height="1043" alt="image" src="https://github.com/user-attachments/assets/53a65bb3-0124-4c28-b703-7b3250d03ad7" />
 <img width="1920" height="1043" alt="image" src="https://github.com/user-attachments/assets/933d6306-2861-4fd9-b6f0-90a9a916df68" />
 <img width="1920" height="1046" alt="image" src="https://github.com/user-attachments/assets/9a145b33-af0b-4d4a-a367-5ac8cd4cd30e" />
