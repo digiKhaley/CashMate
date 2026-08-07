@@ -86,7 +86,3 @@ Open `loanappproject` in NetBeans (or your Ant-compatible IDE) and run `LoanAppP
 <img width="1920" height="1047" alt="image" src="https://github.com/user-attachments/assets/a8e96484-9eb8-4283-8a33-b0af734ee8f1" />
 <img width="1920" height="1043" alt="image" src="https://github.com/user-attachments/assets/933d6306-2861-4fd9-b6f0-90a9a916df68" />
 <img width="1920" height="1046" alt="image" src="https://github.com/user-attachments/assets/9a145b33-af0b-4d4a-a367-5ac8cd4cd30e" />
-
-## License
-
-_Add a license if you want this public and reusable by others (MIT is a common default for personal projects)._
