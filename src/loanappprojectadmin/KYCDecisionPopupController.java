@@ -49,12 +49,6 @@ public class KYCDecisionPopupController implements Initializable {
         // TODO
     }
 
-    /**
-     * Looks up the real submitted details for this user from kyc_records
-     * (via KYCService), instead of relying on whatever was passed in from
-     * the table row - so this always reflects what's actually in the
-     * database.
-     */
     public void setKycData(String name, String email) {
         this.email = email;
         applicantText.setText(name);
@@ -90,10 +84,6 @@ public class KYCDecisionPopupController implements Initializable {
         noImageLabel.setVisible(false);
     }
 
-    /**
-     * Opens the ID image at full size in its own window, so the admin can
-     * actually inspect it clearly before deciding to Verify or Reject.
-     */
     @FXML
     private void handleImageClick() {
         if (idImageView.getImage() == null) {

@@ -1,10 +1,5 @@
 package emailverification;
 
-/**
- * Builds the HTML content for each type of email CashMate sends. Kept separate
- * from EmailService so the wording/styling can be tweaked without touching any
- * sending logic.
- */
 public class EmailTemplate {
 
     private EmailTemplate() {
@@ -12,11 +7,11 @@ public class EmailTemplate {
 
     private static String wrapper(String title, String bodyHtml) {
         return "<html><body style=\"font-family: Arial, sans-serif; background-color:#f4f4f4; padding:20px;\">"
-             + "<div style=\"max-width:480px; margin:0 auto; background:#ffffff; border-radius:12px; padding:30px;\">"
-             + "<h2 style=\"color:#147211; margin-top:0;\">" + title + "</h2>"
-             + bodyHtml
-             + "<p style=\"font-size:12px; color:#999; margin-top:30px;\">CashMate &mdash; this is an automated message, please do not reply.</p>"
-             + "</div></body></html>";
+                + "<div style=\"max-width:480px; margin:0 auto; background:#ffffff; border-radius:12px; padding:30px;\">"
+                + "<h2 style=\"color:#147211; margin-top:0;\">" + title + "</h2>"
+                + bodyHtml
+                + "<p style=\"font-size:12px; color:#999; margin-top:30px;\">CashMate &mdash; this is an automated message, please do not reply.</p>"
+                + "</div></body></html>";
     }
 
     public static String registrationOtp(String name, String otp) {

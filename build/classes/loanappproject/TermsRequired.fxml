@@ -6,13 +6,13 @@
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="320.0" spacing="12.0" style="-fx-background-color: white; -fx-padding: 25;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.TermsRequiredController">
-   <children>
-      <Label text="Please agree to the Privacy Policy to continue!" textAlignment="CENTER" textFill="#ff5252" wrapText="true">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label text="You must open and view the Privacy Policy at least once before creating an account." textAlignment="CENTER" wrapText="true" />
-      <Button mnemonicParsing="false" onAction="#handleOpenPrivacyPolicy" prefHeight="34.0" prefWidth="260.0" style="-fx-background-color: #147211; -fx-background-radius: 8;" text="Open Privacy Policy" textFill="WHITE" />
-   </children>
+    <children>
+        <Label text="Please agree to the Privacy Policy to continue!" textAlignment="CENTER" textFill="#ff5252" wrapText="true">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label text="You must open and view the Privacy Policy at least once before creating an account." textAlignment="CENTER" wrapText="true" />
+        <Button mnemonicParsing="false" onAction="#handleOpenPrivacyPolicy" prefHeight="34.0" prefWidth="260.0" style="-fx-background-color: #147211; -fx-background-radius: 8;" text="Open Privacy Policy" textFill="WHITE" />
+    </children>
 </VBox>

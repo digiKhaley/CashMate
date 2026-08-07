@@ -49,14 +49,13 @@ public class KYCController implements Initializable {
     private RadioButton businessPurposeRadio;
 
     @FXML
-    private RadioButton income1Radio; // ₦200,000 and below
+    private RadioButton income1Radio;
     @FXML
-    private RadioButton income2Radio; // ₦201,000 - ₦500,000
+    private RadioButton income2Radio;
     @FXML
-    private RadioButton income3Radio; // ₦500,001 - ₦1,000,000
+    private RadioButton income3Radio;
     @FXML
-    private RadioButton income4Radio; // ₦1,000,001 and above
-
+    private RadioButton income4Radio;
     private final ToggleGroup purposeGroup = new ToggleGroup();
     private final ToggleGroup incomeGroup = new ToggleGroup();
 
@@ -84,20 +83,19 @@ public class KYCController implements Initializable {
                 showStatusOnly("KYC Verified", "Your identity has been verified. You're all set to request a loan.");
                 break;
             case "rejected":
-                // Let them resubmit - keep the form visible, just flag the rejection.
                 showForm();
                 statusMessageLabel.setText("Your previous submission was rejected. Please resubmit your details and ID.");
                 break;
-            default: // Unverified - nothing submitted yet
+            default:
                 showForm();
                 break;
         }
     }
 
     /**
-     * Hides the submission form and shows the status message instead -
-     * same idea as MyLoan.fxml swapping to MyLoanSuccess.fxml once a loan
-     * has already been requested.
+     * Hides the submission form and shows the status message instead - same
+     * idea as MyLoan.fxml swapping to MyLoanSuccess.fxml once a loan has
+     * already been requested.
      */
     private void showStatusOnly(String title, String body) {
         formSection.setVisible(false);

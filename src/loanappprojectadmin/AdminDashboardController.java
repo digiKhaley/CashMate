@@ -22,14 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import loanappproject.DBConnect;
 import loanappproject.Loan;
-//import loanappproject.DecisionPopupController;
 
-/**
- * FXML Controller class - now shows Users (default) and Loans in one window,
- * toggled by the two nav buttons.
- *
- * @author Kingsley Ezealisiobi
- */
 public class AdminDashboardController implements Initializable {
 
     @FXML
@@ -39,7 +32,6 @@ public class AdminDashboardController implements Initializable {
     @FXML
     private Button loansTabButton;
 
-    // Users tab
     @FXML
     private TableView<UserRecord> usersTableView;
     @FXML
@@ -54,10 +46,6 @@ public class AdminDashboardController implements Initializable {
     private TableColumn<UserRecord, Void> userActionCol;
     @FXML
     private TableColumn<UserRecord, Void> userDeleteCol;
-//    @FXML
-//    private TableColumn<UserRecord, Integer> userIdCol;
-
-    // Loans tab
     @FXML
     private TableView<Loan> loansTableView;
     @FXML
@@ -93,20 +81,17 @@ public class AdminDashboardController implements Initializable {
         setupLoansTable();
 
         loadUsers();
-        showUsersTab(); // Users tab shown by default
+        showUsersTab();
     }
 
     @FXML
     public void backButton() {
-//        Stage stage = (Stage) searchField.getScene().getWindow();
-//        stage.close();
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("AdminAccess.fxml"));
 
             Stage stage = (Stage) searchField.getScene().getWindow();
             stage.setScene(new Scene(root));
-//            ResponsiveHelper.setResponsiveScene(stage, root);
             stage.setTitle("CashMate Admin");
 
         } catch (Exception e) {
@@ -114,7 +99,6 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
-    // ---------- Tab switching ----------
     @FXML
     private void showUsersTab() {
         onUsersTab = true;
@@ -167,9 +151,7 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
-    // ================= USERS TAB =================
     private void setupUsersTable() {
-//        userIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         userNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         userEmailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
         userPhoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
@@ -180,9 +162,6 @@ public class AdminDashboardController implements Initializable {
         addUserDeleteButton();
     }
 
-    /**
-     * users LEFT JOIN kyc_records on email - both tables live in loan_app.
-     */
     private ObservableList<UserRecord> loadUsersFromDatabase() {
         ObservableList<UserRecord> list = FXCollections.observableArrayList();
 
@@ -195,7 +174,6 @@ public class AdminDashboardController implements Initializable {
         try (Connection conn = DBConnect.getConnection(); PreparedStatement ps = conn.prepareStatement(query); ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-//                int id = rs.getInt("id");
                 String name = rs.getString("first_name") + " " + rs.getString("last_name");
                 String email = rs.getString("email");
                 String phone = rs.getString("phone_number");
@@ -238,7 +216,6 @@ public class AdminDashboardController implements Initializable {
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-//                int id = rs.getInt("id");
                 String name = rs.getString("first_name") + " " + rs.getString("last_name");
                 String email = rs.getString("email");
                 String phone = rs.getString("phone_number");
@@ -254,10 +231,6 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
-    /**
-     * Colored badge for KYC status - same visual pattern as the Loans
-     * Pending/Approved/Rejected badges.
-     */
     private void addKycStatusStyling() {
         userKycStatusCol.setCellFactory(col -> new TableCell<>() {
 
@@ -295,13 +268,6 @@ public class AdminDashboardController implements Initializable {
         });
     }
 
-    /**
-     * Action button: greyed/disabled while Unverified (user hasn't submitted
-     * anything yet). Becomes active (clickable, normal color) once the user has
-     * requested verification (status = Pending), opening the verify/reject
-     * popup. Verified/Rejected are final states - shown disabled since there's
-     * nothing left to action.
-     */
     private void addKycActionButton() {
         userActionCol.setCellFactory(col -> new TableCell<>() {
 
@@ -335,7 +301,7 @@ public class AdminDashboardController implements Initializable {
                         actionBtn.setDisable(true);
                         actionBtn.setStyle("-fx-background-color: #f8d7da; -fx-text-fill: red; -fx-background-radius: 8;");
                         break;
-                    default: // Unverified - nothing submitted yet, nothing to review
+                    default:
                         actionBtn.setDisable(true);
                         actionBtn.setStyle("-fx-background-color: #cfe2ff; -fx-text-fill: #4a6fa5; -fx-background-radius: 8;");
                         break;
@@ -366,11 +332,6 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
-    /**
-     * Delete button for the Users tab - same look/behavior as the Loans tab's
-     * delete button. Deletes the user (and their kyc_records row, if any) from
-     * the database.
-     */
     private void addUserDeleteButton() {
         userDeleteCol.setCellFactory(col -> new TableCell<>() {
 
@@ -419,7 +380,6 @@ public class AdminDashboardController implements Initializable {
     private void deleteUser(String email) {
         try (Connection conn = DBConnect.getConnection()) {
 
-            // Remove their kyc_records row first (if any), then the user.
             try (PreparedStatement kycPs = conn.prepareStatement("DELETE FROM kyc_records WHERE email=?")) {
                 kycPs.setString(1, email);
                 kycPs.executeUpdate();
@@ -431,8 +391,6 @@ public class AdminDashboardController implements Initializable {
             }
 
         } catch (SQLException e) {
-            // Most likely cause: this user still has loan(s) in the loans
-            // table, and loans.email has a foreign key pointing at users.
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Cannot Delete User");
             alert.setHeaderText(null);
@@ -443,7 +401,6 @@ public class AdminDashboardController implements Initializable {
         }
     }
 
-    // ================= LOANS TAB (same behavior as before) =================
     private void setupLoansTable() {
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -462,11 +419,6 @@ public class AdminDashboardController implements Initializable {
         addLoanStatusStyling();
     }
 
-    /**
-     * Renders a Double column as a plain, comma-separated number (e.g.
-     * "90,100,000.00") instead of Java's default Double.toString(), which
-     * switches to scientific notation ("9.01E7") for large values.
-     */
     private void addMoneyFormatting(TableColumn<Loan, Double> column) {
         column.setCellFactory(col -> new TableCell<>() {
             @Override
@@ -604,7 +556,6 @@ public class AdminDashboardController implements Initializable {
 
     private void showLoanDecisionPopup(Loan loan) {
         try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("../loanappproject/DecisionPopup.fxml"));
             FXMLLoader loader = new FXMLLoader(getClass().getResource("DecisionPopup.fxml"));
             Parent root = loader.load();
 

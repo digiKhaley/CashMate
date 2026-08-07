@@ -38,20 +38,10 @@ public class KYCUnverifiedPopupController implements Initializable {
         // TODO
     }
 
-    /**
-     * The Dashboard passes its own stage in here (same pattern as
-     * LogoutController.setDashboardController) so "Verify KYC Now" can
-     * navigate the MAIN window, not this popup, to the KYC page.
-     */
     public void setMainStage(Stage stage) {
         this.mainStage = stage;
     }
 
-    /**
-     * Adapts the popup to the user's actual KYC status - same idea as the
-     * KYC page itself: Pending shows a different message than Unverified,
-     * and there's nothing left to "verify now" once it's already submitted.
-     */
     public void setStatus(String status) {
         switch (status.toLowerCase()) {
             case "pending":

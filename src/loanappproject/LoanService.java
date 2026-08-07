@@ -56,11 +56,8 @@ public class LoanService {
         return false;
     }
 
-    /**
-     * Simple holder for what the wallet page needs: the status and amount
-     * of the user's most recent loan request.
-     */
     public static class LatestLoan {
+
         public final String status;
         public final double amount;
 
@@ -70,10 +67,6 @@ public class LoanService {
         }
     }
 
-    /**
-     * Returns the user's most recent loan (status + amount), or null if
-     * they haven't requested one at all yet.
-     */
     public static LatestLoan getLatestLoan(String email) {
         String query = "SELECT status, loan_amount FROM loans WHERE email = ? ORDER BY id DESC LIMIT 1";
 

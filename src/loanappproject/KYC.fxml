@@ -41,7 +41,7 @@
         <AnchorPane layoutX="351.0" layoutY="71.0" prefHeight="660.0" prefWidth="838.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 13, 0, 0, 5);">
             <children>
 
-                <!-- Shown when the user has NOT submitted KYC yet (Unverified), or was Rejected and needs to resubmit -->
+                
                 <AnchorPane fx:id="formSection" layoutX="0.0" layoutY="0.0" prefHeight="660.0" prefWidth="838.0">
                     <children>
 
@@ -51,7 +51,6 @@
                             </font>
                         </Label>
 
-                        <!-- LOAN PURPOSE -->
                         <VBox layoutX="44.0" layoutY="77.0" spacing="13.0">
                             <children>
                                 <Label text="LOAN PURPOSE" textFill="#1a1a1a">
@@ -84,7 +83,6 @@
                             </children>
                         </VBox>
 
-                        <!-- MONTHLY INCOME -->
                         <VBox layoutX="44.0" layoutY="180.0" spacing="13.0">
                             <children>
                                 <Label text="MONTHLY INCOME" textFill="#1a1a1a">
@@ -139,7 +137,6 @@
                             </children>
                         </VBox>
 
-                        <!-- ID TYPE + UPLOAD ID IMAGE -->
                         <VBox layoutX="44.0" layoutY="392.0" spacing="8.0">
                             <children>
                                 <Label text="ID TYPE" textFill="#1a1a1a">
@@ -191,8 +188,7 @@
                     </children>
                 </AnchorPane>
 
-                <!-- Shown when the user HAS already requested KYC (Pending) or is already Verified -
-                     the form disappears, replaced by a status message. Same idea as MyLoan.fxml vs MyLoanSuccess.fxml. -->
+                
                 <VBox fx:id="statusSection" alignment="CENTER" layoutX="0.0" layoutY="0.0" managed="false" prefHeight="660.0" prefWidth="838.0" spacing="15.0" visible="false">
                     <children>
                         <Label fx:id="statusTitleLabel" text="KYC Pending">

@@ -6,16 +6,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
-/**
- * Sends CashMate's transactional emails via SendGrid's v3 Mail Send API
- * (HTTPS, port 443) using java.net.http.HttpClient - no extra JARs needed.
- *
- * This is the class the rest of the app (RequestLoanController,
- * SignUpController, etc.) should call into - it does NOT generate or
- * validate OTPs itself, it only sends what it's given. Pair it with
- * OTPManager for generating/validating the actual codes, and
- * EmailExistenceChecker before sending to catch addresses that don't exist.
- */
 public class EmailService {
 
     private static final String SENDGRID_ENDPOINT = "https://api.sendgrid.com/v3/mail/send";
@@ -29,7 +19,6 @@ public class EmailService {
                 .build();
     }
 
-    /** Low-level send: builds and POSTs one HTML email to SendGrid. Returns false instead of throwing on failure. */
     public boolean sendHtmlEmail(String toAddress, String subject, String htmlBody) {
         try {
             String json = "{"
@@ -49,7 +38,6 @@ public class EmailService {
 
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
-            // SendGrid returns 202 Accepted with an empty body on success.
             if (response.statusCode() >= 200 && response.statusCode() < 300) {
                 return true;
             }
@@ -63,7 +51,6 @@ public class EmailService {
         }
     }
 
-    /** Escapes a string for safe embedding inside a JSON string value (quotes, backslashes, control chars). */
     private static String jsonEscape(String s) {
         StringBuilder sb = new StringBuilder(s.length());
         for (int i = 0; i < s.length(); i++) {
@@ -95,9 +82,10 @@ public class EmailService {
         return sb.toString();
     }
 
-    // ---- Convenience methods for each email CashMate sends (unchanged) ----
-
-    /** Generates + stores an OTP via OTPManager, emails it, and returns the OTP (mainly for logging/testing). */
+    /**
+     * Generates + stores an OTP via OTPManager, emails it, and returns the OTP
+     * (mainly for logging/testing).
+     */
     public String sendRegistrationOtp(String toAddress, String recipientName) {
         String otp = OTPManager.generateAndStore(toAddress);
         sendHtmlEmail(toAddress, "Verify your CashMate account", EmailTemplate.registrationOtp(recipientName, otp));
@@ -110,7 +98,6 @@ public class EmailService {
         return otp;
     }
 
-    /** Checks a code the user typed in against what OTPManager has on file. */
     public boolean verifyOtp(String email, String submittedOtp) {
         return OTPManager.validate(email, submittedOtp);
     }

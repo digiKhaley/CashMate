@@ -23,7 +23,6 @@
                     </font>
                 </Label>
 
-                <!-- Details card -->
                 <VBox spacing="10.0" style="-fx-background-color: #f5f6f7; -fx-background-radius: 10; -fx-padding: 16;">
                     <children>
 
@@ -87,7 +86,6 @@
                     </font>
                 </Label>
 
-                <!-- ID image preview -->
                 <StackPane prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #f5f6f7; -fx-background-radius: 10;">
                     <children>
                         <ImageView fx:id="idImageView" fitHeight="190.0" fitWidth="350.0" onMouseClicked="#handleImageClick" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" />

@@ -27,8 +27,6 @@ public class DashboardController implements Initializable {
     private Label profileName;
     @FXML
     private Label kycStatusBadge;
-//    @FXML
-//    private Button walletBalanceButton;
 
     private String currentName;
     private String currentEmail;
@@ -41,30 +39,8 @@ public class DashboardController implements Initializable {
         }
 
         refreshKycBadge();
-//        refreshWalletButton();
     }
 
-    /**
-     * Same status logic as WalletBreakdownController - keeps the button
-     * itself honest instead of a hardcoded "₦0.00" that never matched the
-     * real balance shown in the popup.
-     */
-//    private void refreshWalletButton() {
-//        LoanService.LatestLoan latestLoan = LoanService.getLatestLoan(Session.currentUserEmail);
-//
-//        if (latestLoan != null && "approved".equalsIgnoreCase(latestLoan.status)) {
-//            walletBalanceButton.setText("Wallet: ₦" + String.format("%,.2f", latestLoan.amount));
-//        } else {
-//            walletBalanceButton.setText("Wallet");
-//        }
-//    }
-
-    /**
-     * Re-checks KYC status from the DB and updates the badge at the top of
-     * the dashboard - shows the actual status (Unverified/Pending/Verified/
-     * Rejected), same idea as the KYC page itself. Called on load, and again
-     * after returning from the KYC page or the gate popup.
-     */
     private void refreshKycBadge() {
         String status = KYCService.getStatus(Session.currentUserEmail);
 
@@ -81,7 +57,7 @@ public class DashboardController implements Initializable {
                 kycStatusBadge.setText("KYC Rejected");
                 kycStatusBadge.setStyle("-fx-background-color: #f8d7da; -fx-text-fill: #b02a37; -fx-background-radius: 12; -fx-padding: 4 12; -fx-font-size: 15px; -fx-font-weight: bold;");
                 break;
-            default: // Unverified
+            default:
                 kycStatusBadge.setText("KYC Unverified");
                 kycStatusBadge.setStyle("-fx-background-color: #f8d7da; -fx-text-fill: #b02a37; -fx-background-radius: 12; -fx-padding: 4 12; -fx-font-size: 15px; -fx-font-weight: bold;");
                 break;
@@ -131,10 +107,6 @@ public class DashboardController implements Initializable {
         profileName.setText(name);
     }
 
-    /**
-     * Wallet balance widget click - shows a breakdown popup with the real
-     * balance/status logic.
-     */
     @FXML
     private void handleWalletBalance() {
         try {
@@ -147,7 +119,6 @@ public class DashboardController implements Initializable {
             stage.showAndWait();
 
 //            refreshWalletButton();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -161,7 +132,6 @@ public class DashboardController implements Initializable {
             String kycStatus = KYCService.getStatus(Session.currentUserEmail);
 
             if (!"Verified".equalsIgnoreCase(kycStatus)) {
-                // Gate: show the KYC status popup instead of continuing.
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("KYCUnverifiedPopup.fxml"));
                 Parent popupRoot = loader.load();
 
@@ -175,7 +145,7 @@ public class DashboardController implements Initializable {
                 popupStage.initModality(Modality.APPLICATION_MODAL);
                 popupStage.showAndWait();
 
-                refreshKycBadge(); // in case they verified and came back
+                refreshKycBadge();
                 return;
             }
 
@@ -198,7 +168,4 @@ public class DashboardController implements Initializable {
         }
     }
 
-    // NOTE: handleAdmin() and the Admin route have been removed entirely.
-    // Admin access now lives in its own standalone app -
-    // see the loanappprojectadmin package (run AdminApp.java directly).
 }

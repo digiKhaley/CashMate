@@ -2,10 +2,6 @@ package emailverification;
 
 import java.security.SecureRandom;
 
-/**
- * Generates numeric one-time passcodes. Uses SecureRandom (not Random/Math.random)
- * since these codes are a security control.
- */
 public class OTPGenerator {
 
     private static final SecureRandom RANDOM = new SecureRandom();
@@ -13,7 +9,6 @@ public class OTPGenerator {
     private OTPGenerator() {
     }
 
-    /** Generates the default 6-digit OTP, e.g. "042917". */
     public static String generate() {
         return generate(6);
     }

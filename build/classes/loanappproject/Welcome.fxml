@@ -7,19 +7,19 @@
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.WelcomeController">
     <children>
-      <VBox alignment="CENTER" layoutX="268.0" layoutY="140.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-              <ImageView fitHeight="480.0" fitWidth="632.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                      <Image url="@IMAGES/Untitled%20design%20(2).png" />
-                  </image>
-              </ImageView>
-              <ImageView fitHeight="98.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                      <Image url="@IMAGES/icons8-loading.gif" />
-                  </image>
-              </ImageView>
-         </children>
-      </VBox>
+        <VBox alignment="CENTER" layoutX="268.0" layoutY="140.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="480.0" fitWidth="632.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@IMAGES/Untitled%20design%20(2).png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="98.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@IMAGES/icons8-loading.gif" />
+                    </image>
+                </ImageView>
+            </children>
+        </VBox>
     </children>
 </AnchorPane>

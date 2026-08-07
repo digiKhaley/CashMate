@@ -17,15 +17,12 @@
 <AnchorPane id="AnchorPane" fx:id="cardContainer" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappprojectadmin.AdminAccessController">
     <children>
 
-        <!-- StackPane fills the entire window (all 4 anchors = 0) and
-             auto-centers its child, both horizontally and vertically,
-             at any window size. This replaces the old fixed layoutX/layoutY card. -->
         <StackPane style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #c8e6c9, #ffe0b2); -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 20, 0.2, 0, 6);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <VBox alignment="CENTER" maxHeight="584.0" maxWidth="496.0" minHeight="100.0" minWidth="300.0" prefHeight="584.0" prefWidth="496.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 40; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
                     <children>
 
-                        <!-- Icon + circle background, overlaid via StackPane instead of absolute x/y -->
+                        
                         <StackPane>
                             <children>
                                 <Circle accessibleRole="IMAGE_VIEW" fill="#dffff2" radius="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
@@ -64,17 +61,19 @@
                                                     </font>
                                                 </Label>
                                                 <PasswordField fx:id="passwordField" maxWidth="Infinity" prefHeight="41.0" promptText="Enter admin password">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font></PasswordField>
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </PasswordField>
                                             </children>
                                         </VBox>
                                         <HBox alignment="CENTER_RIGHT">
                                             <children>
                                                 <Hyperlink onAction="#handleForgotPassword" text="Forgot Password?">
-                                       <font>
-                                          <Font size="14.0" />
-                                       </font></Hyperlink>
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Hyperlink>
                                             </children>
                                         </HBox>
                                     </children>

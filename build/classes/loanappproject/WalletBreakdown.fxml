@@ -61,7 +61,7 @@
 
                 <Label fx:id="messageLabel" style="-fx-font-size: 12px;" text="You haven't requested a loan yet." textFill="#888888" wrapText="true" />
 
-                <!-- Only shown once there's an actual balance to move (see showApprovedState) -->
+                
                 <Button fx:id="withdrawButton" managed="false" mnemonicParsing="false" onAction="#handleWithdraw" prefHeight="46.0" prefWidth="320.0" style="-fx-background-color: white; -fx-border-color: #147211; -fx-border-radius: 8; -fx-background-radius: 8;" text="Withdraw" textFill="#147211" visible="false">
                     <font>
                         <Font name="System Bold" size="14.0" />

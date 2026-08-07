@@ -10,36 +10,43 @@
     <children>
 
         <Label layoutX="126.0" layoutY="33.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Loan Details" textFill="#147211">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
 
         <VBox alignment="CENTER" layoutX="43.0" layoutY="79.0" prefHeight="273.0" prefWidth="306.0" spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10,0,0,4);">
 
             <Label fx:id="amountLabel" text="Amount: ">
-            <font>
-               <Font size="14.0" />
-            </font></Label>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
             <Label fx:id="durationLabel" text="Duration: ">
-            <font>
-               <Font size="14.0" />
-            </font></Label>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
             <Label fx:id="interestLabel" text="Interest: ">
-            <font>
-               <Font size="14.0" />
-            </font></Label>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
             <Label fx:id="repaymentLabel" text="Repayment: ">
-            <font>
-               <Font size="14.0" />
-            </font></Label>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
             <Label fx:id="dateLabel" text="Date: ">
-            <font>
-               <Font size="14.0" />
-            </font></Label>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
             <Label fx:id="statusLabel" text="Status: ">
-            <font>
-               <Font size="14.0" />
-            </font></Label>
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
 
         </VBox>
 

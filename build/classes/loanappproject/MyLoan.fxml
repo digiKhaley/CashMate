@@ -14,66 +14,66 @@
 
 <AnchorPane id="AnchorPane" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: linear-gradient(to right, #e8f5e9, #fdf2e9);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.MyLoanController">
     <children>
-      <HBox alignment="CENTER" layoutX="122.0" layoutY="49.0">
-         <children>
-              <Button alignment="CENTER" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: transparent;" textAlignment="CENTER">
-                  <graphic>
-                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                          <image>
-                              <Image url="@IMAGES/arrow-left-line%20(3).png" />
-                          </image>
-                      </ImageView>
-                  </graphic>
-                  <cursor>
-                      <Cursor fx:constant="HAND" />
-                  </cursor>
-              </Button>
-              <Text fill="#1d7222" strokeType="OUTSIDE" strokeWidth="0.0" text="My Loan">
-                  <font>
-                      <Font name="System Bold" size="30.0" />
-                  </font>
-              </Text>
-         </children>
-      </HBox>
-      <VBox alignment="CENTER" layoutX="112.0" layoutY="101.0" prefHeight="474.0" prefWidth="1319.0" spacing="30.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
-         <children>
-            <StackPane prefHeight="118.0" prefWidth="1327.0">
-               <children>
-                  <Circle accessibleRole="IMAGE_VIEW" fill="#dffff2" radius="71.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                  <ImageView fitHeight="76.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@IMAGES/icons8-file-24.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </StackPane>
-            <VBox alignment="CENTER" spacing="25.0">
-               <children>
-                  <VBox alignment="CENTER" spacing="5.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No loan available">
-                           <font>
-                              <Font name="System Bold" size="30.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="You haven't requested any loan yet">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <Button fx:id="handleRequestLoan" defaultButton="true" mnemonicParsing="false" onAction="#handleRequestLoan" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: ff4d00; -fx-background-radius: 12;" text="+ Request Loan" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                     <cursor>
+        <HBox alignment="CENTER" layoutX="122.0" layoutY="49.0">
+            <children>
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: transparent;" textAlignment="CENTER">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@IMAGES/arrow-left-line%20(3).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
                         <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
+                    </cursor>
+                </Button>
+                <Text fill="#1d7222" strokeType="OUTSIDE" strokeWidth="0.0" text="My Loan">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+            </children>
+        </HBox>
+        <VBox alignment="CENTER" layoutX="112.0" layoutY="101.0" prefHeight="474.0" prefWidth="1319.0" spacing="30.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+            <children>
+                <StackPane prefHeight="118.0" prefWidth="1327.0">
+                    <children>
+                        <Circle accessibleRole="IMAGE_VIEW" fill="#dffff2" radius="71.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <ImageView fitHeight="76.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@IMAGES/icons8-file-24.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+                <VBox alignment="CENTER" spacing="25.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="No loan available">
+                                    <font>
+                                        <Font name="System Bold" size="30.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="You haven't requested any loan yet">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                        <Button fx:id="handleRequestLoan" defaultButton="true" mnemonicParsing="false" onAction="#handleRequestLoan" prefHeight="41.0" prefWidth="180.0" style="-fx-background-color: ff4d00; -fx-background-radius: 12;" text="+ Request Loan" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
     </children>
 </AnchorPane>

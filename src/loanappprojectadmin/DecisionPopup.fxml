@@ -21,7 +21,6 @@
                     </font>
                 </Label>
 
-                <!-- Details card -->
                 <VBox spacing="10.0" style="-fx-background-color: #f5f6f7; -fx-background-radius: 10; -fx-padding: 16;">
                     <children>
 

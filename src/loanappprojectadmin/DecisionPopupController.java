@@ -15,11 +15,6 @@ import loanappproject.DBConnect;
 import loanappproject.Loan;
 import emailverification.EmailService;
 
-/**
- * FXML Controller class
- *
- * @author Kingsley Ezealisiobi
- */
 public class DecisionPopupController implements Initializable {
 
     /**

@@ -15,83 +15,83 @@
 
 <AnchorPane id="AnchorPane" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: linear-gradient(to right, #e8f5e9, #fdf2e9);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.MyLoanSuccessController">
     <children>
-      <VBox alignment="CENTER" layoutX="111.0" layoutY="95.0" prefHeight="526.0" prefWidth="1319.0" spacing="30.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
-         <children>
-            <StackPane>
-               <children>
-                  <Circle accessibleRole="IMAGE_VIEW" fill="#dffff2" radius="71.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                  <ImageView fitHeight="76.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@IMAGES/icons8-checkmark-24.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </StackPane>
-            <VBox alignment="CENTER" spacing="20.0">
-               <children>
-                  <VBox alignment="CENTER" spacing="5.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Loan Request Submitted!">
-                           <font>
-                              <Font name="System Bold" size="30.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Loan request sent for admin approval">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER" spacing="25.0">
-                     <children>
-                        <HBox alignment="CENTER">
-                           <children>
-                              <VBox fx:id="statusCont" alignment="CENTER" prefHeight="36.0" prefWidth="131.0" style="-fx-background-color: #fff3e0; -fx-border-color: #ff9800; -fx-border-radius: 13; -fx-background-radius: 10; -fx-padding: 6;">
-                                 <children>
-                                    <Label fx:id="statusBlock" text="Status: Pending" textFill="#8d6635">
-                                       <font>
-                                          <Font size="15.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <Button fx:id="viewLoanBtn" mnemonicParsing="false" onAction="#handleViewLoan" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: #008000; -fx-background-radius: 12;" text="View My Loan" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-      <HBox alignment="CENTER" layoutX="120.0" layoutY="46.0">
-         <children>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: transparent;" textAlignment="CENTER">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@IMAGES/arrow-left-line%20(3).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Text fill="#1d7222" strokeType="OUTSIDE" strokeWidth="0.0" text="My Loan">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Text>
-         </children>
-      </HBox>
+        <VBox alignment="CENTER" layoutX="111.0" layoutY="95.0" prefHeight="526.0" prefWidth="1319.0" spacing="30.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+            <children>
+                <StackPane>
+                    <children>
+                        <Circle accessibleRole="IMAGE_VIEW" fill="#dffff2" radius="71.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <ImageView fitHeight="76.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@IMAGES/icons8-checkmark-24.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+                <VBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Loan Request Submitted!">
+                                    <font>
+                                        <Font name="System Bold" size="30.0" />
+                                    </font>
+                                </Text>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Loan request sent for admin approval">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="25.0">
+                            <children>
+                                <HBox alignment="CENTER">
+                                    <children>
+                                        <VBox fx:id="statusCont" alignment="CENTER" prefHeight="36.0" prefWidth="131.0" style="-fx-background-color: #fff3e0; -fx-border-color: #ff9800; -fx-border-radius: 13; -fx-background-radius: 10; -fx-padding: 6;">
+                                            <children>
+                                                <Label fx:id="statusBlock" text="Status: Pending" textFill="#8d6635">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <Button fx:id="viewLoanBtn" mnemonicParsing="false" onAction="#handleViewLoan" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: #008000; -fx-background-radius: 12;" text="View My Loan" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" layoutX="120.0" layoutY="46.0">
+            <children>
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: transparent;" textAlignment="CENTER">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@IMAGES/arrow-left-line%20(3).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Text fill="#1d7222" strokeType="OUTSIDE" strokeWidth="0.0" text="My Loan">
+                    <font>
+                        <Font name="System Bold" size="30.0" />
+                    </font>
+                </Text>
+            </children>
+        </HBox>
     </children>
 </AnchorPane>

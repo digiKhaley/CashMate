@@ -12,13 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class - just displays the policy text and closes.
- * Reading this popup does NOT check the agreement box on Sign Up; that's
- * still a separate, required action.
- *
- * @author Kingsley Ezealisiobi
- */
 public class PrivacyPolicyController implements Initializable {
 
     @Override

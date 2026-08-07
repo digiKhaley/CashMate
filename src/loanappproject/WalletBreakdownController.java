@@ -47,7 +47,6 @@ public class WalletBreakdownController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         LoanService.LatestLoan latestLoan = LoanService.getLatestLoan(Session.currentUserEmail);
         if (latestLoan == null) {
-            // Never requested a loan at all - neutral grey
             showEmptyState("You haven't requested a loan yet.", "#888888");
             return;
         }
@@ -56,23 +55,17 @@ public class WalletBreakdownController implements Initializable {
                 showApprovedState(latestLoan.amount);
                 break;
             case "pending":
-                showEmptyState("Your loan request is pending approval.", "#c77700"); // orange
+                showEmptyState("Your loan request is pending approval.", "#c77700");
                 break;
             case "rejected":
-                showEmptyState("Your loan was not approved.", "#b02a37"); // dark red
+                showEmptyState("Your loan was not approved.", "#b02a37");
                 break;
             default:
-                showEmptyState("You haven't requested a loan yet.", "#888888"); // grey
+                showEmptyState("You haven't requested a loan yet.", "#888888");
                 break;
         }
     }
 
-    /**
-     * No usable balance yet - everything stays at ₦0.00, struck through,
-     * with a message explaining why (no loan yet / pending / rejected),
-     * colored to match the status. Withdraw is hidden here - there's
-     * nothing to withdraw.
-     */
     private void showEmptyState(String message, String textColor) {
         setAmount(balanceText, "₦0.00", "#147211", true);
         setAmount(availableLabel, "₦0.00", "#333333", true);
@@ -83,13 +76,6 @@ public class WalletBreakdownController implements Initializable {
         setWithdrawVisible(false);
     }
 
-    /**
-     * Loan approved - the wallet becomes actually useful: balance reflects
-     * the real disbursed amount, shown solid (no strikethrough). Total
-     * Repaid stays ₦0.00 since there's no repayment tracking yet (a later
-     * feature, per your note). Withdraw becomes available since there's
-     * now an actual balance to move.
-     */
     private void showApprovedState(double amount) {
         String formatted = "₦" + String.format("%,.2f", amount);
         setAmount(balanceText, formatted, "#147211", false);

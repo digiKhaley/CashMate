@@ -4,7 +4,6 @@
  */
 package loanappproject;
 
-//import javafxapplication5.DashboardController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;

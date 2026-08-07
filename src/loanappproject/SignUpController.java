@@ -52,10 +52,8 @@ public class SignUpController implements Initializable {
 
     private final EmailService emailService = new EmailService();
 
-    /** Text the create-account button shows when it isn't busy. Grabbed once at startup so we can restore it exactly. */
     private String createAccountButtonDefaultText;
 
-    /** The spinning-dots gif shown in place of the button text while signup is processing. Built once and reused. */
     private ImageView createAccountSpinner;
 
     @Override
@@ -69,13 +67,6 @@ public class SignUpController implements Initializable {
         createAccountSpinner.setPreserveRatio(true);
     }
 
-    /**
-     * Swaps the create-account button between its normal "Create account"
-     * text and a spinning gif, so the button gives feedback while the email
-     * deliverability check and the OTP send (both network calls) run on a
-     * background thread instead of freezing the window. Only the text/graphic
-     * slot changes here - the button's own color/style is left untouched.
-     */
     private void setButtonLoading(boolean loading) {
         if (loading) {
             createAccountButton.setText(null);
@@ -108,11 +99,6 @@ public class SignUpController implements Initializable {
         privacyPolicyViewed = true;
     }
 
-    /**
-     * Same as showPopup(), but for TermsRequired.fxml specifically - gives
-     * its controller a callback so that if the user opens the Privacy
-     * Policy from the button INSIDE that popup, it counts as viewed too.
-     */
     private void showTermsRequiredPopup() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("TermsRequired.fxml"));
@@ -132,16 +118,6 @@ public class SignUpController implements Initializable {
         }
     }
 
-    /**
-     * Shows the OTP entry popup and blocks until it closes. Returns whether
-     * the user actually confirmed the correct code - if they closed the
-     * popup without doing so, this returns false and no account should be
-     * created.
-     *
-     * The OTP itself has already been sent by this point (on the background
-     * thread that ran before this popup was opened), so the popup is just
-     * told the recipient details for its label and doesn't send a second one.
-     */
     private boolean verifyEmailWithOtp(String email, String firstName) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("OtpVerification.fxml"));
@@ -182,7 +158,6 @@ public class SignUpController implements Initializable {
         String phn = phone.getText().trim();
         String pass = password.getText().trim();
 
-        // Step 1: format check (existing regex - is this shaped like a real gmail.com address?)
         if (!ema.matches("^[A-Za-z0-9+_.-]+@gmail\\.com$")) {
             showPopup("InvalidEmail.fxml", "Invalid Email");
             return;
@@ -208,11 +183,6 @@ public class SignUpController implements Initializable {
             showTermsRequiredPopup();
             return;
         }
-
-        // Steps 2 and 3 (checking deliverability, then sending the OTP) are
-        // both network calls, so they run on a background thread. The button
-        // shows a spinner in place of its text the whole time this is
-        // happening, instead of the window just sitting there looking frozen.
         final String finalEma = ema;
         final String finalFirst = first;
         final String finalLast = last;
@@ -222,11 +192,11 @@ public class SignUpController implements Initializable {
         Task<Boolean> otpPrecheckTask = new Task<>() {
             @Override
             protected Boolean call() {
-                // Step 2: is this specific address actually deliverable? (AbstractAPI Email Reputation)
+
                 if (!EmailExistenceChecker.isDeliverable(finalEma)) {
                     return false;
                 }
-                // Step 3a: send the first OTP now, while the button is still spinning.
+
                 emailService.sendRegistrationOtp(finalEma, finalFirst);
                 return true;
             }
@@ -241,9 +211,6 @@ public class SignUpController implements Initializable {
                 return;
             }
 
-            // Step 3b: pop up the OTP entry screen (the code has already been
-            // sent) and wait for the user to confirm it. Nothing is written
-            // to the database until this comes back true.
             boolean verified = verifyEmailWithOtp(finalEma, finalFirst);
             if (!verified) {
                 return;
@@ -268,11 +235,6 @@ public class SignUpController implements Initializable {
         precheckThread.start();
     }
 
-    /**
-     * Writes the new user to the database and takes them to Login. Split out
-     * of handleCreateaccount() because it now runs from inside the
-     * background task's onSucceeded callback rather than inline.
-     */
     private void finishAccountCreation(String first, String last, String ema, String phn, String pass) {
         try {
             Connection conn = DBConnect.getConnection();
@@ -292,7 +254,6 @@ public class SignUpController implements Initializable {
             e.printStackTrace();
         }
 
-        // Step 4: confirm to the user, then send them to Login.
         showPopup("AccountCreated.fxml", "Success");
 
         try {

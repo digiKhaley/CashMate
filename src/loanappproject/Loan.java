@@ -74,4 +74,4 @@ public class Loan {
     public String getStatus() {
         return status;
     }
-}   
+}

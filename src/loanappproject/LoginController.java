@@ -4,7 +4,6 @@
  */
 package loanappproject;
 
-//import javafxapplication5.DashboardController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -87,12 +86,6 @@ public class LoginController implements Initializable {
         }
     }
 
-    /**
-     * setPasswordChanged() is called by ForgotLoginController AFTER
-     * Login.fxml has already finished loading (and initialize() has
-     * already run) - so the alert can't just be checked inside
-     * initialize() alone, it has to be re-checked here too.
-     */
     public void setPasswordChanged(boolean status) {
         this.passwordChanged = status;
         checkAndShowAlert();

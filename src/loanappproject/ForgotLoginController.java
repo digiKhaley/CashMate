@@ -107,8 +107,6 @@ public class ForgotLoginController implements Initializable {
             return;
         }
 
-        // Normalize to +234 format (e.g. "070..." -> "+234070..." -> "+23470...")
-        // BEFORE checking the database, since numbers are stored as +234... there.
         if (phone.startsWith("0")) {
             phone = "+234" + phone.substring(1);
         } else if (phone.startsWith("234")) {
@@ -118,8 +116,6 @@ public class ForgotLoginController implements Initializable {
         try {
             Connection con = DBConnect.getConnection();
 
-            // LOWER() on last_name makes the match case-insensitive,
-            // same idea as the case-insensitive check on the admin side.
             String query = "SELECT * FROM users WHERE email=? AND LOWER(last_name)=LOWER(?) AND phone_number=?";
             PreparedStatement pst = con.prepareStatement(query);
             pst.setString(1, mail);

@@ -28,10 +28,10 @@
                                 <Label text="Your information is used to verify your identity (KYC), assess loan eligibility, process loan requests, and communicate updates about your loan status." wrapText="true" />
 
                                 <Label style="-fx-font-weight: bold;" text="3. Loan Interest &amp; Repayment Terms" wrapText="true" />
-                                <Label text="Interest is calculated based on your selected loan duration: 10% for durations of 1 year or less, 12% for durations up to 3 years, and 15% for durations beyond 3 years. Interest is applied to the full loan amount for the entire duration. Loans must be repaid in full by the stated repayment date." wrapText="true" />
+                                <Label text="Interest is calculated based on your selected loan duration: 10% for loans of 1 year or less, 11% for loans of more than 1 year up to 2 years, 13% for loans of more than 2 years up to 3 years, 14% for loans of more than 3 years up to 4 years, and 15% for loans of more than 4 years. Interest is applied to the full loan amount for the entire loan duration. Loans must be repaid in full by the stated repayment date." wrapText="true" />
 
                                 <Label style="-fx-font-weight: bold;" text="4. KYC Verification" wrapText="true" />
-                                <Label text="You must submit a valid form of ID (NIN, Driver's License, International Passport, or PVC) along with a clear image of it. Submissions are reviewed by an administrator and may be Verified or Rejected. Loans cannot be disbursed until your KYC is Verified." wrapText="true" />
+                                <Label text="You must submit a valid form of ID (NIN, Driver's License, International Passport, PVC or Utility Bill) along with a clear image of it. Submissions are reviewed by an administrator and may be Verified or Rejected. Loans cannot be disbursed until your KYC is Verified." wrapText="true" />
 
                                 <Label style="-fx-font-weight: bold;" text="5. Data Storage &amp; Security" wrapText="true" />
                                 <Label text="Your data is stored securely and is only accessible to authorized administrators for the purpose of loan and KYC review. We do not sell or share your personal information with third parties." wrapText="true" />

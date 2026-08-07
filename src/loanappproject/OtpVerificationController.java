@@ -13,18 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller for OtpVerification.fxml.
- *
- * Flow: SignUpController sends the first OTP itself (on a background thread,
- * while the Create account button shows a spinner), then opens this popup
- * and calls setRecipient(..., true) to tell it the email already went out -
- * this just fills in the label instead of sending a second one. Once the
- * popup closes, SignUpController checks isVerified() to decide whether to
- * actually create the account - so nothing gets written to the database
- * until the email has been proven real by the user typing back the code
- * sent to it.
- */
 public class OtpVerificationController implements Initializable {
 
     @FXML
@@ -47,14 +35,6 @@ public class OtpVerificationController implements Initializable {
         // TODO
     }
 
-    /**
-     * Called by SignUpController right after this popup is loaded.
-     *
-     * @param otpAlreadySent true if the caller already sent the first OTP
-     * itself (this is what SignUpController does now, on a background
-     * thread, before opening this popup) - in that case this just fills in
-     * the label. Pass false if this popup should send the first code itself.
-     */
     public void setRecipient(String email, String recipientName, boolean otpAlreadySent) {
         this.email = email;
         this.recipientName = recipientName;
@@ -64,7 +44,6 @@ public class OtpVerificationController implements Initializable {
         }
     }
 
-    /** SignUpController reads this after showAndWait() returns to decide whether to create the account. */
     public boolean isVerified() {
         return verified;
     }

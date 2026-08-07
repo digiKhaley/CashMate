@@ -31,7 +31,7 @@
         </Button>
         <Label layoutX="75.0" layoutY="44.0" style="-fx-text-fill: green; -fx-font-size: 22; -fx-font-weight: bold;" text="Admin Dashboard" />
 
-        <!-- Nav buttons: Users (default/active) and Loans -->
+        
         <HBox layoutX="40.0" layoutY="90.0" spacing="10.0">
             <children>
                 <Button fx:id="usersTabButton" mnemonicParsing="false" onAction="#showUsersTab" prefHeight="36.0" prefWidth="100.0" style="-fx-background-color: #008000; -fx-background-radius: 8;" text="Users" textFill="WHITE">
@@ -53,10 +53,6 @@
             </children>
         </HBox>
 
-        <!-- Search row: anchored left+right so it stretches with the window.
-             The search field grows to fill the extra space (HBox.hgrow); the
-             two buttons keep their original fixed size - only their position
-             shifts right as the row widens. -->
         <HBox alignment="CENTER_LEFT" layoutY="140.0" spacing="6.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="140.0">
             <children>
                 <TextField fx:id="searchField" maxWidth="Infinity" prefHeight="42.0" promptText="Search by name..." style="-fx-background-radius: 10;" HBox.hgrow="ALWAYS">
@@ -100,18 +96,12 @@
             </children>
         </HBox>
 
-        <!-- Content area: only one of these two tables is visible/managed at a time.
-             Anchored on all 4 sides instead of a fixed layoutX/Y+size - the margins
-             below (40/198/40/50) exactly reproduce the original 820x352 box at the
-             design's original 900x600 window size, so nothing visually changes at
-             that size. It only grows to fill extra space once the window is resized
-             larger than that. -->
         <StackPane AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="198.0">
             <children>
 
                 <TableView fx:id="usersTableView">
                     <columns>
-                        <TableColumn fx:id="userNameCol" prefWidth="417.0" resizable="false" style="-fx-alignment: CENTER;" text="Name" />
+                        <TableColumn fx:id="userNameCol" prefWidth="404.0" resizable="false" style="-fx-alignment: CENTER;" text="Name" />
                         <TableColumn fx:id="userEmailCol" prefWidth="300.0" resizable="false" style="-fx-alignment: CENTER;" text="Email" />
                         <TableColumn fx:id="userPhoneCol" prefWidth="300.0" resizable="false" style="-fx-alignment: CENTER;" text="Phone" />
                         <TableColumn fx:id="userKycStatusCol" prefWidth="250.0" resizable="false" style="-fx-alignment: CENTER;" text="KYC Status" />

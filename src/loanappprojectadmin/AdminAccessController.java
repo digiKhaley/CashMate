@@ -18,11 +18,6 @@ import javafx.stage.Stage;
 import java.sql.*;
 import loanappproject.DBConnect;
 
-/**
- * FXML Controller class - entry point of the standalone admin app.
- *
- * @author Kingsley Ezealisiobi
- */
 public class AdminAccessController implements Initializable {
 
     @FXML
@@ -37,10 +32,6 @@ public class AdminAccessController implements Initializable {
         checkAndShowAlert();
     }
 
-    /**
-     * Called by ForgotPasswordController after a successful reset, so this
-     * screen can show the "password changed" confirmation alert.
-     */
     public void setPasswordChanged(boolean status) {
         this.passwordChanged = status;
         checkAndShowAlert();
@@ -60,7 +51,6 @@ public class AdminAccessController implements Initializable {
 
     private void showPopup(String fileName, String title) {
         try {
-            // Reuses the shared popup FXMLs that already live in loanappproject
             Parent root = FXMLLoader.load(getClass().getResource("../loanappproject/" + fileName));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -125,10 +115,6 @@ public class AdminAccessController implements Initializable {
         }
     }
 
-    /**
-     * This is now the standalone admin app's entry screen, so there is no
-     * user-side page to "go back" to. The back button simply exits the app.
-     */
     @FXML
     public void backButton() {
         Stage stage = (Stage) passwordField.getScene().getWindow();

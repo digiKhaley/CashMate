@@ -8,13 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller for AccountCreated.fxml. Deliberately simple: this popup's
- * only job is to close itself when the user clicks Continue. SignUpController
- * calls showAndWait() on it, so once this closes, control returns there and
- * it handles navigating the main window to Login.fxml - same navigation code
- * that was already there before, just moved to run after this popup closes.
- */
 public class AccountCreatedController implements Initializable {
 
     @Override

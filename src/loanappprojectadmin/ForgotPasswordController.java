@@ -54,7 +54,6 @@ public class ForgotPasswordController implements Initializable {
 
     private void showPopup(String fileName, String title) {
         try {
-            // These shared popups live in loanappproject, not here
             Parent root = FXMLLoader.load(getClass().getResource("../loanappproject/" + fileName));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -87,7 +86,6 @@ public class ForgotPasswordController implements Initializable {
                 && teacherO.equalsIgnoreCase("kola")) {
 
             try {
-                // ResetPassword.fxml lives right here in loanappprojectadmin
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("ResetPassword.fxml"));
                 Parent root = loader.load();
 

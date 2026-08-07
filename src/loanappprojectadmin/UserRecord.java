@@ -4,30 +4,19 @@
  */
 package loanappprojectadmin;
 
-/**
- * One row in the admin's "Users" table - a user plus their KYC status.
- *
- * @author Kingsley Ezealisiobi
- */
 public class UserRecord {
 
-//    private int id;
     private String email;
     private String name;
     private String phone;
     private String kycStatus;
 
     public UserRecord(String email, String name, String phone, String kycStatus) {
-//        this.id = id;
         this.email = email;
         this.name = name;
         this.phone = phone;
         this.kycStatus = kycStatus;
     }
-
-//    public int getId() {
-//        return id;
-//    }
 
     public String getEmail() {
         return email;
