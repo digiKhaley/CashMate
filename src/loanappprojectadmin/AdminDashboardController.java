@@ -487,9 +487,9 @@ public class AdminDashboardController implements Initializable {
         try {
             Connection conn = DBConnect.getConnection();
 
-            String query = "SELECT loans.id, users.first_name, users.last_name, "
+            String query = "SELECT loans.id, users.first_name, users.last_name, loans.email, "
                     + "loans.loan_amount, loans.duration, loans.total_interest, "
-                    + "loans.total_repayment, loans.date_requested, loans.status "
+                    + "loans.total_repayment, loans.date_requested, loans.repayment_date, loans.status "
                     + "FROM loans JOIN users ON loans.email = users.email "
                     + "WHERE users.first_name LIKE ? OR users.last_name LIKE ? OR users.email LIKE ?";
 
@@ -503,14 +503,16 @@ public class AdminDashboardController implements Initializable {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("first_name") + " " + rs.getString("last_name");
+                String email = rs.getString("email");
                 double amount = rs.getDouble("loan_amount");
                 String duration = rs.getString("duration");
                 double interest = rs.getDouble("total_interest");
                 double repayment = rs.getDouble("total_repayment");
                 String date = rs.getString("date_requested");
+                String repaymentDate = rs.getString("repayment_date");
                 String status = rs.getString("status");
 
-                list.add(new Loan(id, name, amount, duration, interest, repayment, date, status));
+                list.add(new Loan(id, name, email, amount, duration, interest, repayment, date, repaymentDate, status));
             }
 
             loansTableView.setItems(list);
@@ -523,9 +525,9 @@ public class AdminDashboardController implements Initializable {
     private ObservableList<Loan> loadLoansFromDatabase() {
         ObservableList<Loan> list = FXCollections.observableArrayList();
 
-        String query = "SELECT loans.id, users.first_name, users.last_name, "
+        String query = "SELECT loans.id, users.first_name, users.last_name, loans.email, "
                 + "loans.loan_amount, loans.duration, loans.total_interest, "
-                + "loans.total_repayment, loans.date_requested, loans.status "
+                + "loans.total_repayment, loans.date_requested, loans.repayment_date, loans.status "
                 + "FROM loans JOIN users ON loans.email = users.email";
 
         try (Connection conn = DBConnect.getConnection(); PreparedStatement ps = conn.prepareStatement(query); ResultSet rs = ps.executeQuery()) {
@@ -533,14 +535,16 @@ public class AdminDashboardController implements Initializable {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("first_name") + " " + rs.getString("last_name");
+                String email = rs.getString("email");
                 double amount = rs.getDouble("loan_amount");
                 String duration = rs.getString("duration");
                 double interest = rs.getDouble("total_interest");
                 double repayment = rs.getDouble("total_repayment");
                 String date = rs.getString("date_requested");
+                String repaymentDate = rs.getString("repayment_date");
                 String status = rs.getString("status");
 
-                list.add(new Loan(id, name, amount, duration, interest, repayment, date, status));
+                list.add(new Loan(id, name, email, amount, duration, interest, repayment, date, repaymentDate, status));
             }
 
         } catch (Exception e) {

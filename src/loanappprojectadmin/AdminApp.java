@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  * Entry point for the standalone Admin application. This is completely
  * separate from LoanAppProject.java (the user-facing app) - the regular app
  * no longer has any Admin button or route to this at all.
- *
+ *+++
  * To run: in NetBeans, right-click this file -> "Run File" (not the main
  * project Run button, which still launches the user-facing LoanAppProject).
  *

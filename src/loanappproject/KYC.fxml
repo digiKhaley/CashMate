@@ -14,105 +14,163 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.KYCController">
+<AnchorPane id="AnchorPane" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: linear-gradient(to right, #e8f5e9, #fdf2e9);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.KYCController">
     <children>
-        <Button contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" layoutX="124.0" layoutY="12.0" mnemonicParsing="false" onAction="#backButton" prefHeight="20.0" prefWidth="24.0" style="-fx-background-color: transparent;;">
-            <graphic>
-                <ImageView fitHeight="24.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@IMAGES/arrow-left-line%20(3).png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Text fill="#1d7222" layoutX="159.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify Your KYC">
-            <font>
-                <Font name="System Bold" size="22.0" />
-            </font>
-        </Text>
+        <HBox alignment="CENTER_LEFT" layoutX="351.0" layoutY="18.0" spacing="13.0">
+            <children>
+                <Button contentDisplay="GRAPHIC_ONLY" graphicTextGap="2.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+                    <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@IMAGES/arrow-left-line%20(3).png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Text fill="#1d7222" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify Your KYC">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Text>
+            </children>
+        </HBox>
 
-        <AnchorPane layoutX="125.0" layoutY="46.0" prefHeight="514.0" prefWidth="652.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+        <AnchorPane layoutX="351.0" layoutY="71.0" prefHeight="660.0" prefWidth="838.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 13, 0, 0, 5);">
             <children>
 
                 <!-- Shown when the user has NOT submitted KYC yet (Unverified), or was Rejected and needs to resubmit -->
-                <AnchorPane fx:id="formSection" layoutX="0.0" layoutY="0.0" prefHeight="514.0" prefWidth="652.0">
+                <AnchorPane fx:id="formSection" layoutX="0.0" layoutY="0.0" prefHeight="660.0" prefWidth="838.0">
                     <children>
 
-                        <Label layoutX="34.0" layoutY="20.0" text="To request a loan, we need a few details plus a valid ID." wrapText="true">
+                        <Label layoutX="44.0" layoutY="32.0" text="To request a loan, we need a few details plus a valid ID." textFill="#444444" wrapText="true">
                             <font>
-                                <Font size="13.0" />
+                                <Font size="17.0" />
                             </font>
                         </Label>
 
-                        <VBox layoutX="34.0" layoutY="55.0" spacing="6.0">
+                        <!-- LOAN PURPOSE -->
+                        <VBox layoutX="44.0" layoutY="77.0" spacing="13.0">
                             <children>
-                                <Label text="Loan Purpose">
+                                <Label text="LOAN PURPOSE" textFill="#1a1a1a">
                                     <font>
-                                        <Font name="System Bold" size="14.0" />
+                                        <Font name="System Bold" size="15.0" />
                                     </font>
                                 </Label>
-                                <HBox spacing="25.0">
+                                <HBox spacing="19.0">
                                     <children>
-                                        <RadioButton fx:id="personalPurposeRadio" mnemonicParsing="false" text="Personal" />
-                                        <RadioButton fx:id="businessPurposeRadio" mnemonicParsing="false" text="Business" />
+                                        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="244.0" style="-fx-background-color: white; -fx-border-color: #d9d9d9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0 0 0 18;">
+                                            <children>
+                                                <RadioButton fx:id="personalPurposeRadio" mnemonicParsing="false" text="Personal" textFill="#1a2b4a">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="244.0" style="-fx-background-color: white; -fx-border-color: #d9d9d9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0 0 0 18;">
+                                            <children>
+                                                <RadioButton fx:id="businessPurposeRadio" mnemonicParsing="false" text="Business" textFill="#1a2b4a">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </HBox>
                                     </children>
                                 </HBox>
                             </children>
                         </VBox>
 
-                        <VBox layoutX="34.0" layoutY="115.0" spacing="6.0">
+                        <!-- MONTHLY INCOME -->
+                        <VBox layoutX="44.0" layoutY="180.0" spacing="13.0">
                             <children>
-                                <Label text="Monthly Income">
+                                <Label text="MONTHLY INCOME" textFill="#1a1a1a">
                                     <font>
-                                        <Font name="System Bold" size="14.0" />
+                                        <Font name="System Bold" size="15.0" />
                                     </font>
                                 </Label>
-                                <HBox spacing="25.0">
+                                <HBox spacing="19.0">
                                     <children>
-                                        <RadioButton fx:id="income1Radio" mnemonicParsing="false" text="₦200,000 and below" />
-                                        <RadioButton fx:id="income2Radio" mnemonicParsing="false" text="₦201,000 - ₦500,000" />
+                                        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="347.0" style="-fx-background-color: white; -fx-border-color: #d9d9d9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0 0 0 18;">
+                                            <children>
+                                                <RadioButton fx:id="income1Radio" mnemonicParsing="false" text="₦200,000 and below" textFill="#1a2b4a">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="347.0" style="-fx-background-color: white; -fx-border-color: #d9d9d9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0 0 0 18;">
+                                            <children>
+                                                <RadioButton fx:id="income2Radio" mnemonicParsing="false" text="₦201,000 - ₦500,000" textFill="#1a2b4a">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </HBox>
                                     </children>
                                 </HBox>
-                                <HBox spacing="25.0">
+                                <HBox spacing="19.0">
                                     <children>
-                                        <RadioButton fx:id="income3Radio" mnemonicParsing="false" text="₦500,001 - ₦1,000,000" />
-                                        <RadioButton fx:id="income4Radio" mnemonicParsing="false" text="₦1,000,001 and above" />
+                                        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="347.0" style="-fx-background-color: white; -fx-border-color: #d9d9d9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0 0 0 18;">
+                                            <children>
+                                                <RadioButton fx:id="income3Radio" mnemonicParsing="false" text="₦500,001 - ₦1,000,000" textFill="#1a2b4a">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="347.0" style="-fx-background-color: white; -fx-border-color: #d9d9d9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0 0 0 18;">
+                                            <children>
+                                                <RadioButton fx:id="income4Radio" mnemonicParsing="false" text="₦1,000,001 and above" textFill="#1a2b4a">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </RadioButton>
+                                            </children>
+                                        </HBox>
                                     </children>
                                 </HBox>
                             </children>
                         </VBox>
 
-                        <VBox layoutX="34.0" layoutY="245.0">
+                        <!-- ID TYPE + UPLOAD ID IMAGE -->
+                        <VBox layoutX="44.0" layoutY="392.0" spacing="8.0">
                             <children>
-                                <Label text="ID Type">
+                                <Label text="ID TYPE" textFill="#1a1a1a">
                                     <font>
-                                        <Font name="System Bold" size="14.0" />
+                                        <Font name="System Bold" size="15.0" />
                                     </font>
                                 </Label>
-                                <ComboBox fx:id="idTypeBox" prefHeight="32.0" prefWidth="269.0" promptText="Select ID Type" />
+                                <ComboBox fx:id="idTypeBox" prefHeight="49.0" prefWidth="346.0" promptText="Select ID Type" style="-fx-font-size: 14px;" />
                             </children>
                         </VBox>
 
-                        <VBox layoutX="328.0" layoutY="245.0" spacing="4.0">
+                        <VBox layoutX="422.0" layoutY="392.0" spacing="8.0">
                             <children>
-                                <Label text="Upload ID Image">
+                                <Label text="UPLOAD ID IMAGE" textFill="#1a1a1a">
                                     <font>
-                                        <Font name="System Bold" size="14.0" />
+                                        <Font name="System Bold" size="15.0" />
                                     </font>
                                 </Label>
-                                <HBox alignment="CENTER_LEFT" prefWidth="269.0" spacing="8.0">
+                                <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="346.0" spacing="10.0" style="-fx-border-color: #d9d9d9; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 0 0 0 5;">
                                     <children>
-                                        <Button mnemonicParsing="false" onAction="#handleUploadIdImage" prefHeight="32.0" prefWidth="120.0" style="-fx-background-color: #e6e6e6; -fx-cursor: hand;" text="Choose File">
+                                        <Button mnemonicParsing="false" onAction="#handleUploadIdImage" prefHeight="36.0" prefWidth="129.0" style="-fx-background-color: #e6e6e6; -fx-background-radius: 8; -fx-cursor: hand;" text="Choose File">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
                                             <cursor>
                                                 <Cursor fx:constant="HAND" />
                                             </cursor>
                                         </Button>
                                         <Label fx:id="idFileNameLabel" text="No file chosen" textFill="#666666" wrapText="true">
                                             <font>
-                                                <Font size="12.0" />
+                                                <Font size="15.0" />
                                             </font>
                                         </Label>
                                     </children>
@@ -120,11 +178,11 @@
                             </children>
                         </VBox>
 
-                        <Label fx:id="statusMessageLabel" layoutX="34.0" layoutY="320.0" textFill="#666666" wrapText="true" prefWidth="565.0" />
+                        <Label fx:id="statusMessageLabel" layoutX="44.0" layoutY="488.0" prefWidth="726.0" textFill="#666666" wrapText="true" />
 
-                        <Button defaultButton="true" layoutX="34.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleSubmitKyc" prefHeight="37.0" prefWidth="565.0" style="-fx-background-color: #147211; -fx-cursor: hand;" text="Submit for Verification" textFill="WHITE">
+                        <Button defaultButton="true" layoutX="44.0" layoutY="533.0" mnemonicParsing="false" onAction="#handleSubmitKyc" prefHeight="58.0" prefWidth="726.0" style="-fx-background-color: #147211; -fx-background-radius: 10; -fx-cursor: hand;" text="Submit for Verification" textFill="WHITE">
                             <font>
-                                <Font name="System Bold" size="15.0" />
+                                <Font name="System Bold" size="19.0" />
                             </font>
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -135,16 +193,16 @@
 
                 <!-- Shown when the user HAS already requested KYC (Pending) or is already Verified -
                      the form disappears, replaced by a status message. Same idea as MyLoan.fxml vs MyLoanSuccess.fxml. -->
-                <VBox fx:id="statusSection" alignment="CENTER" layoutX="0.0" layoutY="0.0" managed="false" prefHeight="514.0" prefWidth="652.0" spacing="12.0" visible="false">
+                <VBox fx:id="statusSection" alignment="CENTER" layoutX="0.0" layoutY="0.0" managed="false" prefHeight="660.0" prefWidth="838.0" spacing="15.0" visible="false">
                     <children>
                         <Label fx:id="statusTitleLabel" text="KYC Pending">
                             <font>
-                                <Font name="System Bold" size="22.0" />
+                                <Font name="System Bold" size="28.0" />
                             </font>
                         </Label>
-                        <Label fx:id="statusBodyLabel" style="-fx-font-size: 14px;" text="Your KYC verification is pending review. We'll let you know once it's been reviewed." textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="statusBodyLabel" style="-fx-font-size: 18px;" text="Your KYC verification is pending review. We'll let you know once it's been reviewed." textAlignment="CENTER" wrapText="true">
                             <padding>
-                                <Insets left="60.0" right="60.0" />
+                                <Insets left="77.0" right="77.0" />
                             </padding>
                         </Label>
                     </children>

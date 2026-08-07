@@ -17,6 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import loanappproject.KYCService;
+import emailverification.EmailService;
 
 /**
  * FXML Controller class
@@ -41,6 +42,7 @@ public class KYCDecisionPopupController implements Initializable {
     private String email;
     private String idImagePath;
     private Runnable onUpdateCallback;
+    private final EmailService emailService = new EmailService();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -118,12 +120,15 @@ public class KYCDecisionPopupController implements Initializable {
     @FXML
     private void handleVerify() {
         KYCService.updateStatus(email, "Verified");
+        emailService.sendKycApproved(email, applicantText.getText());
         closeAndRefresh();
     }
 
     @FXML
     private void handleReject() {
         KYCService.updateStatus(email, "Rejected");
+        emailService.sendKycRejected(email, applicantText.getText(),
+                "One or more submitted documents could not be verified. Please resubmit clear, valid ID documents.");
         closeAndRefresh();
     }
 

@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.sql.*;
 import loanappproject.DBConnect;
 import loanappproject.Loan;
+import emailverification.EmailService;
 
 /**
  * FXML Controller class
@@ -35,6 +36,7 @@ public class DecisionPopupController implements Initializable {
     }
 
     private Loan currentLoan;
+    private final EmailService emailService = new EmailService();
 
     public void setLoanData(Loan loan) {
         this.currentLoan = loan;
@@ -68,6 +70,15 @@ public class DecisionPopupController implements Initializable {
             ps.setInt(2, currentLoan.getId());
 
             ps.executeUpdate();
+
+            String formattedAmount = "\u20a6" + String.format("%,.2f", currentLoan.getAmount());
+            if ("Approved".equals(status)) {
+                emailService.sendLoanApproved(currentLoan.getEmail(), currentLoan.getName(),
+                        formattedAmount, currentLoan.getRepaymentDate());
+            } else if ("Rejected".equals(status)) {
+                emailService.sendLoanRejected(currentLoan.getEmail(), currentLoan.getName(),
+                        "This request did not meet our current lending criteria.");
+            }
 
             if (onUpdateCallback != null) {
                 onUpdateCallback.run();

@@ -106,8 +106,12 @@ public class RequestLoanController implements Initializable {
 //        }
         if (years <= 1) {
             return 0.10;
+        } else if (years <= 2) {
+            return 0.11;
         } else if (years <= 3) {
-            return 0.12;
+            return 0.13;
+        } else if (years <= 4) {
+            return 0.14;
         } else {
             return 0.15;
         }

@@ -20,100 +20,119 @@
 
         <!-- StackPane fills the window and keeps its child centered at any
              size - the card itself and everything inside it is unchanged. -->
-        <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <StackPane style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #c8e6c9, #ffe0b2); -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 20, 0.2, 0, 6);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-        <AnchorPane maxHeight="574.0" maxWidth="483.0" prefHeight="574.0" prefWidth="483.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+        <AnchorPane maxHeight="654.0" maxWidth="554.0" prefHeight="654.0" prefWidth="439.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
             <children>
-                <HBox layoutX="80.0" layoutY="46.0" prefHeight="94.0" prefWidth="316.0">
+                <HBox layoutX="50.0" layoutY="46.0" prefHeight="98.0" prefWidth="401.0">
                     <children>
-                        <ImageView fitHeight="107.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="120.0" fitWidth="442.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@IMAGES/Logo%20+%20Name%20+%20Motto%20(Horizonal).png" />
                             </image>
                         </ImageView>
                     </children>
                 </HBox>
-                <HBox layoutX="209.0" layoutY="122.0">
+                <HBox layoutX="227.0" layoutY="140.0">
                     <children>
                         <Label text="Login">
                             <font>
-                                <Font name="System Bold" size="25.0" />
+                                <Font name="System Bold" size="36.0" />
                             </font>
                         </Label>
                     </children>
                 </HBox>
-                <HBox layoutX="90.0" layoutY="155.208984375">
+                <HBox layoutX="114.0" layoutY="197.0">
                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your reliable money mate for instant cash when sapa dey show face, fast approval, gentle repayment, no long talk." textAlignment="CENTER" wrappingWidth="289.0422058105469">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your reliable money mate for instant cash when sapa dey show face, fast approval, gentle repayment, no long talk." textAlignment="CENTER" wrappingWidth="322.6421813964844">
                             <font>
-                                <Font size="10.0" />
+                                <Font size="13.0" />
                             </font>
                         </Text>
                     </children>
                 </HBox>
-                <TextField fx:id="email" layoutX="62.0" layoutY="246.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter your email" />
-                <Label layoutX="62.0" layoutY="218.0" text="Email">
+                <TextField fx:id="email" layoutX="64.0" layoutY="289.0" prefHeight="41.0" prefWidth="435.0" promptText="Enter your email">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                <Label layoutX="64.0" layoutY="261.0" text="Email">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <Label layoutX="62.0" layoutY="299.0" text="Password">
+                <Label layoutX="64.0" layoutY="342.0" text="Password">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <PasswordField fx:id="password" layoutX="61.0" layoutY="327.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter your password" />
-                <Hyperlink layoutX="297.0" layoutY="372.0" onAction="#forgotLogin" text="Forgetten Password?" textFill="#348031" />
-                <Button defaultButton="true" layoutX="70.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="36.0" prefWidth="335.0" style="-fx-background-color: #008000;" text="Login" textFill="WHITE">
+                <PasswordField fx:id="password" layoutX="63.0" layoutY="370.0" prefHeight="41.0" prefWidth="435.0" promptText="Enter your password">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+                <Hyperlink layoutX="359.0" layoutY="415.0" onAction="#forgotLogin" text="Forgetten Password?" textFill="#348031">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                <Button defaultButton="true" layoutX="64.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="41.0" prefWidth="435.0" style="-fx-background-color: #008000;" text="Login" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="18.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Separator layoutX="78.0" layoutY="459.0" prefHeight="9.0" prefWidth="139.0" />
-                <Separator layoutX="237.0" layoutY="459.0" prefHeight="9.0" prefWidth="160.0" />
-                <Label layoutX="222.0" layoutY="451.0" text="or" />
-                <Button layoutX="124.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
-                    <graphic>
-                        <ImageView fitHeight="23.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@IMAGES/icons8-google-48.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button layoutX="180.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
-                    <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@IMAGES/icons8-apple-24.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button layoutX="237.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
-                    <graphic>
-                        <ImageView fitHeight="22.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@IMAGES/icons8-instagram-logo-94.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button layoutX="293.0" layoutY="472.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0">
-                    <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@IMAGES/icons8-facebook-48.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <HBox layoutX="148.0" layoutY="518.0">
+                <Separator layoutX="80.0" layoutY="519.0" prefHeight="9.0" prefWidth="200.0" />
+                <Separator layoutX="299.0" layoutY="519.0" prefHeight="9.0" prefWidth="200.0" />
+                <Label layoutX="284.0" layoutY="513.0" text="or" />
+                  <HBox layoutX="160.0" layoutY="545.0" spacing="25.0">
+                     <children>
+                      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" style="-fx-background-color: transparent;">
+                          <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@IMAGES/icons8-google-48.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" style="-fx-background-color: transparent;">
+                          <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@IMAGES/icons8-apple-24.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" style="-fx-background-color: transparent;">
+                          <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@IMAGES/icons8-instagram-logo-94.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                      <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" style="-fx-background-color: transparent;">
+                          <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@IMAGES/icons8-facebook-48.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                     </children>
+                  </HBox>
+                <HBox layoutX="186.0" layoutY="590.0">
                     <children>
-                        <Hyperlink onAction="#signUp" text="Don't have an Account? Sign up" textFill="GREEN" />
+                        <Hyperlink onAction="#signUp" text="Don't have an Account? Sign up" textFill="GREEN">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Hyperlink>
                     </children>
                 </HBox>
             </children>

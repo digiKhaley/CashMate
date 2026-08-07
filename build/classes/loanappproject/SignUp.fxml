@@ -16,13 +16,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.SignUpController">
     <children>
-        <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <StackPane style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #c8e6c9, #ffe0b2);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-        <AnchorPane maxHeight="574.0" maxWidth="483.0" prefHeight="574.0" prefWidth="483.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
+        <AnchorPane maxHeight="654.0" maxWidth="554.0" prefHeight="654.0" prefWidth="439.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 25; -fx-spacing: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
             <children>
-                <HBox layoutX="80.0" layoutY="46.0" prefHeight="94.0" prefWidth="316.0">
+                <HBox layoutX="60.0" layoutY="33.0" prefHeight="94.0" prefWidth="316.0">
                     <children>
-                        <ImageView fitHeight="107.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="120.0" fitWidth="442.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@IMAGES/Logo%20+%20Name%20+%20Motto%20(Horizonal).png" />
                             </image>
@@ -31,60 +31,88 @@
                 </HBox>
                 <HBox layoutX="209.0" layoutY="122.0" />
                 <HBox layoutX="90.0" layoutY="155.208984375" />
-                <TextField fx:id="firstName" layoutX="61.0" layoutY="205.0" prefHeight="36.0" prefWidth="176.0" promptText="Enter first name" />
-                <Label layoutX="61.0" layoutY="177.0" text="First Name">
+                <TextField fx:id="firstName" layoutX="63.0" layoutY="211.0" prefHeight="41.0" prefWidth="205.0" promptText="Enter first name">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                <Label layoutX="63.0" layoutY="183.0" text="First Name">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <Label layoutX="62.0" layoutY="396.0" text="Password">
+                <Label layoutX="64.0" layoutY="409.0" text="Password">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <PasswordField fx:id="password" layoutX="61.0" layoutY="424.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter password here" />
-                <HBox alignment="CENTER_LEFT" layoutX="105.0" layoutY="470.0" spacing="2.0">
+                <PasswordField fx:id="password" layoutX="63.0" layoutY="437.0" prefHeight="41.0" prefWidth="435.0" promptText="Enter password here">
+                     <font>
+                        <Font size="14.0" />
+                     </font></PasswordField>
+                <HBox alignment="CENTER_LEFT" layoutX="187.0" layoutY="488.0" spacing="2.0">
                     <children>
-                        <CheckBox fx:id="privacyCheckBox" mnemonicParsing="false" text="I agree to the" />
-                        <Hyperlink onAction="#handlePrivacyPolicy" text="Privacy Policy" />
+                        <CheckBox fx:id="privacyCheckBox" mnemonicParsing="false" text="I agree to the">
+                           <font>
+                              <Font size="14.0" />
+                           </font></CheckBox>
+                        <Hyperlink onAction="#handlePrivacyPolicy" text="Privacy Policy" textFill="#348031">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Hyperlink>
                     </children>
                 </HBox>
-                <Button defaultButton="true" layoutX="71.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleCreateaccount" prefHeight="36.0" prefWidth="335.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" text="Create account" textFill="WHITE">
+                <Button fx:id="createAccountButton" defaultButton="true" layoutX="64.0" layoutY="522.0" mnemonicParsing="false" onAction="#handleCreateaccount" prefHeight="41.0" prefWidth="435.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 6; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" text="Create account" textFill="WHITE">
                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="17.0" />
                     </font>
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
                 <HBox layoutX="148.0" layoutY="518.0" />
-                <TextField fx:id="lastName" layoutX="244.0" layoutY="205.0" prefHeight="36.0" prefWidth="176.0" promptText="Enter last name" />
-                <Label layoutX="244.0" layoutY="177.0" text="Last Name">
+                <TextField fx:id="lastName" layoutX="295.0" layoutY="211.0" prefHeight="41.0" prefWidth="205.0" promptText="Enter last name">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                <Label layoutX="295.0" layoutY="183.0" text="Last Name">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <TextField fx:id="email" layoutX="61.0" layoutY="278.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter your email" />
-                <Label layoutX="61.0" layoutY="250.0" text="Email">
+                <TextField fx:id="email" layoutX="63.0" layoutY="288.0" prefHeight="41.0" prefWidth="435.0" promptText="Enter your email">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                <Label layoutX="63.0" layoutY="260.0" text="Email">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <Label layoutX="189.0" layoutY="137.0" prefHeight="36.0" prefWidth="104.0" text="Sign Up">
+                <Label layoutX="211.0" layoutY="128.0" prefHeight="54.0" prefWidth="135.0" text="Sign Up">
                     <font>
-                        <Font name="System Bold" size="25.0" />
+                        <Font name="System Bold" size="36.0" />
                     </font>
                 </Label>
-                <TextField fx:id="phone" layoutX="61.0" layoutY="354.0" prefHeight="36.0" prefWidth="354.0" promptText="Enter phone number" />
-                <Label layoutX="61.0" layoutY="326.0" text="Phone Number">
+                <TextField fx:id="phone" layoutX="63.0" layoutY="364.0" prefHeight="41.0" prefWidth="435.0" promptText="Enter phone number">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                <Label layoutX="63.0" layoutY="336.0" text="Phone Number">
                     <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="20.0" />
                     </font>
                 </Label>
-                <HBox alignment="CENTER" layoutX="152.0" layoutY="539.0">
+                <HBox alignment="CENTER" layoutX="184.0" layoutY="574.0">
                     <children>
-                        <Label text="Already have an account?" textFill="GREEN" />
-                        <Hyperlink onAction="#signIn" text="Sign in" textFill="#ff7700" />
+                        <Label text="Already have an account?" textFill="GREEN">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Hyperlink onAction="#signIn" text="Sign in" textFill="#ff7700">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Hyperlink>
                     </children>
                 </HBox>
             </children>

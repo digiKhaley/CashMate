@@ -10,79 +10,99 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.ForgotLoginController">
+<AnchorPane prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: linear-gradient(to right, #e8f5e9, #fdf2e9); -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.ForgotLoginController">
     <children>
-        <Button layoutX="242.0" layoutY="42.0" mnemonicParsing="false" onAction="#backButton" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: transparent;">
-            <graphic>
-                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true">
-                    <image>
-                        <Image url="@IMAGES/arrow-left-line%20(3).png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <VBox alignment="CENTER" layoutX="246.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="408.0" spacing="35.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 35;">
-            <children>
-                <VBox spacing="25.0">
-                    <children>
-                        <VBox alignment="CENTER">
-                            <children>
-                                <Label text="Forgot Password ?" textFill="#147211">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                </Label>
-                                <Label prefWidth="325.0" text="No worries you'd get logged back in securely just by filling out the fields below with the correct information." textAlignment="CENTER" wrapText="true" />
-                            </children>
-                        </VBox>
-                        <VBox spacing="12.0">
-                            <children>
-                                <VBox spacing="2.0">
-                                    <children>
-                                        <Label text="Last Name :">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField fx:id="lastName" promptText="Enter Last Name" />
-                                    </children>
-                                </VBox>
-                                <VBox spacing="2.0">
-                                    <children>
-                                        <Label text="Email :">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField fx:id="email" promptText="Enter email" />
-                                    </children>
-                                </VBox>
-                                <VBox spacing="2.0">
-                                    <children>
-                                        <Label text="Phone Number :">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Label>
-                                        <TextField fx:id="phnNumber" promptText="Enter phone number" />
-                                    </children>
-                                </VBox>
-                            </children>
-                        </VBox>
-                    </children>
-                </VBox>
-                <Button defaultButton="true" mnemonicParsing="false" onAction="#submitButton" prefHeight="35.0" prefWidth="366.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 7;" text="Submit" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-            </children>
-        </VBox>
+      <VBox layoutX="500.0" layoutY="100.0" AnchorPane.topAnchor="80.0">
+         <children>
+              <Button mnemonicParsing="false" onAction="#backButton" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+                  <graphic>
+                      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                          <image>
+                              <Image url="@IMAGES/arrow-left-line%20(3).png" />
+                          </image>
+                      </ImageView>
+                  </graphic>
+                  <cursor>
+                      <Cursor fx:constant="HAND" />
+                  </cursor>
+              </Button>
+              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="552.0" spacing="35.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 35; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 20, 0.2, 0, 6);">
+                  <children>
+                      <VBox spacing="25.0">
+                          <children>
+                              <VBox alignment="CENTER">
+                                  <children>
+                                      <Label text="Forgot Password ?" textFill="#147211">
+                                          <font>
+                                              <Font name="System Bold" size="35.0" />
+                                          </font>
+                                      </Label>
+                                      <Label prefHeight="82.0" prefWidth="424.0" text="No worries you'd get logged back in securely just by filling out the fields below with the correct information." textAlignment="CENTER" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                                  </children>
+                              </VBox>
+                              <VBox spacing="12.0">
+                                  <children>
+                                      <VBox spacing="2.0">
+                                          <children>
+                                              <Label text="Last Name :">
+                                                  <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                  </font>
+                                              </Label>
+                                              <TextField fx:id="lastName" prefHeight="41.0" promptText="Enter Last Name">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextField>
+                                          </children>
+                                      </VBox>
+                                      <VBox spacing="2.0">
+                                          <children>
+                                              <Label text="Email :">
+                                                  <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                  </font>
+                                              </Label>
+                                              <TextField fx:id="email" prefHeight="41.0" promptText="Enter email">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextField>
+                                          </children>
+                                      </VBox>
+                                      <VBox prefHeight="41.0" spacing="2.0">
+                                          <children>
+                                              <Label text="Phone Number :">
+                                                  <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                  </font>
+                                              </Label>
+                                              <TextField fx:id="phnNumber" prefHeight="41.0" promptText="Enter phone number">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </TextField>
+                                          </children>
+                                      </VBox>
+                                  </children>
+                              </VBox>
+                          </children>
+                      </VBox>
+                      <Button defaultButton="true" mnemonicParsing="false" onAction="#submitButton" prefHeight="43.0" prefWidth="481.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 7;" text="Submit" textFill="WHITE">
+                          <font>
+                              <Font name="System Bold" size="20.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                  </children>
+              </VBox>
+         </children>
+      </VBox>
     </children>
 </AnchorPane>

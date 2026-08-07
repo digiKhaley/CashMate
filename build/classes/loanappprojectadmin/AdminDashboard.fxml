@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappprojectadmin.AdminDashboardController">
+<AnchorPane prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: linear-gradient(to right, #e8f5e9, #fdf2e9);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappprojectadmin.AdminDashboardController">
 
     <children>
         <Button layoutX="35.0" layoutY="44.0" mnemonicParsing="false" onAction="#backButton" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: transparent;">
@@ -53,71 +53,84 @@
             </children>
         </HBox>
 
-        <TextField fx:id="searchField" layoutX="40.0" layoutY="140.0" prefHeight="42.0" prefWidth="447.0" promptText="Search by name..." style="-fx-background-radius: 10;">
-            <opaqueInsets>
-                <Insets />
-            </opaqueInsets>
-            <padding>
-                <Insets left="20.0" />
-            </padding>
-        </TextField>
-        <Button defaultButton="true" layoutX="493.0" layoutY="140.0" onAction="#handleSearch" prefHeight="42.0" prefWidth="101.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 12;" text="Search" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-            <graphic>
-                <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../loanappproject/IMAGES/icons8-search-16.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
-        <Button layoutX="604.0" layoutY="140.0" onAction="#handleViewAll" prefHeight="42.0" prefWidth="154.0" style="-fx-background-color: #008000; -fx-background-radius: 12;" text="View All" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-            <graphic>
-                <ImageView fitHeight="14.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../loanappproject/IMAGES/icons8-eye-24.png" />
-                    </image>
-                </ImageView>
-            </graphic>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </Button>
+        <!-- Search row: anchored left+right so it stretches with the window.
+             The search field grows to fill the extra space (HBox.hgrow); the
+             two buttons keep their original fixed size - only their position
+             shifts right as the row widens. -->
+        <HBox alignment="CENTER_LEFT" layoutY="140.0" spacing="6.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="140.0">
+            <children>
+                <TextField fx:id="searchField" maxWidth="Infinity" prefHeight="42.0" promptText="Search by name..." style="-fx-background-radius: 10;" HBox.hgrow="ALWAYS">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                </TextField>
+                <Button defaultButton="true" onAction="#handleSearch" prefHeight="42.0" prefWidth="101.0" style="-fx-background-color: #ff4d00; -fx-background-radius: 12;" text="Search" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="10.0" fitWidth="10.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../loanappproject/IMAGES/icons8-search-16.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button onAction="#handleViewAll" prefHeight="42.0" prefWidth="154.0" style="-fx-background-color: #008000; -fx-background-radius: 12;" text="View All" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="14.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../loanappproject/IMAGES/icons8-eye-24.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
 
-        <!-- Content area: only one of these two tables is visible/managed at a time -->
-        <StackPane layoutX="40.0" layoutY="198.0" prefHeight="352.0" prefWidth="820.0">
+        <!-- Content area: only one of these two tables is visible/managed at a time.
+             Anchored on all 4 sides instead of a fixed layoutX/Y+size - the margins
+             below (40/198/40/50) exactly reproduce the original 820x352 box at the
+             design's original 900x600 window size, so nothing visually changes at
+             that size. It only grows to fill extra space once the window is resized
+             larger than that. -->
+        <StackPane AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="198.0">
             <children>
 
-                <TableView fx:id="usersTableView" prefHeight="352.0" prefWidth="820.0">
+                <TableView fx:id="usersTableView">
                     <columns>
-                        <TableColumn fx:id="userNameCol" prefWidth="209.5999984741211" text="Name" />
-                        <TableColumn fx:id="userEmailCol" prefWidth="168.0" text="Email" />
-                        <TableColumn fx:id="userPhoneCol" prefWidth="142.40005493164062" text="Phone" />
-                        <TableColumn fx:id="userKycStatusCol" prefWidth="131.99993896484375" text="KYC Status" />
-                        <TableColumn fx:id="userActionCol" prefWidth="92.0" text="Verify KYC" />
-                        <TableColumn fx:id="userDeleteCol" prefWidth="85.5999755859375" text="Actions" />
+                        <TableColumn fx:id="userNameCol" prefWidth="417.0" resizable="false" style="-fx-alignment: CENTER;" text="Name" />
+                        <TableColumn fx:id="userEmailCol" prefWidth="300.0" resizable="false" style="-fx-alignment: CENTER;" text="Email" />
+                        <TableColumn fx:id="userPhoneCol" prefWidth="300.0" resizable="false" style="-fx-alignment: CENTER;" text="Phone" />
+                        <TableColumn fx:id="userKycStatusCol" prefWidth="250.0" resizable="false" style="-fx-alignment: CENTER;" text="KYC Status" />
+                        <TableColumn fx:id="userActionCol" prefWidth="120.0" resizable="false" style="-fx-alignment: CENTER;" text="Verify KYC" />
+                        <TableColumn fx:id="userDeleteCol" prefWidth="70.0" resizable="false" style="-fx-alignment: CENTER;" text="Actions" />
                     </columns>
                 </TableView>
-
-                <TableView fx:id="loansTableView" managed="false" prefHeight="352.0" prefWidth="820.0" visible="false">
+                
+                <TableView fx:id="loansTableView" managed="false" prefHeight="0.0" prefWidth="0.0" visible="false">
                     <columns>
-                        <TableColumn fx:id="idCol" prefWidth="45.0" text="ID" />
-                        <TableColumn fx:id="nameCol" prefWidth="114.0" text="Name" />
-                        <TableColumn fx:id="amountCol" prefWidth="81.0" text="Loan Amount" />
-                        <TableColumn fx:id="durationCol" text="Duration" />
-                        <TableColumn fx:id="interestCol" prefWidth="94.0" text="Interest" />
-                        <TableColumn fx:id="repaymentCol" prefWidth="116.0" text="Repayment" />
-                        <TableColumn fx:id="dateCol" prefWidth="141.0" text="Date Requested" />
-                        <TableColumn fx:id="statusCol" prefWidth="56.7999267578125" text="Status" />
-                        <TableColumn fx:id="actionCol" prefWidth="91.2000732421875" text="Actions" />
+                        <TableColumn fx:id="idCol" prefWidth="50.0" resizable="false" style="-fx-alignment: CENTER;" text="ID" />
+                        <TableColumn fx:id="nameCol" prefWidth="335.0" resizable="false" style="-fx-alignment: CENTER;" text="Name" />
+                        <TableColumn fx:id="amountCol" prefWidth="170.0" resizable="false" style="-fx-alignment: CENTER;" text="Loan Amount" />
+                        <TableColumn fx:id="durationCol" prefWidth="170.0" resizable="false" style="-fx-alignment: CENTER;" text="Duration" />
+                        <TableColumn fx:id="interestCol" prefWidth="170.0" resizable="false" style="-fx-alignment: CENTER;" text="Interest" />
+                        <TableColumn fx:id="repaymentCol" prefWidth="170.0" resizable="false" style="-fx-alignment: CENTER;" text="Repayment" />
+                        <TableColumn fx:id="dateCol" prefWidth="170.0" resizable="false" style="-fx-alignment: CENTER;" text="Date Requested" />
+                        <TableColumn fx:id="statusCol" prefWidth="150.0" resizable="false" style="-fx-alignment: CENTER;" text="Status" />
+                        <TableColumn fx:id="actionCol" prefWidth="70.0" resizable="false" style="-fx-alignment: CENTER;" text="Actions" />
                     </columns>
                 </TableView>
 

@@ -12,22 +12,26 @@ public class Loan {
 
     private int id;
     private String name;
+    private String email;
     private double amount;
     private String duration;
     private double interest;
     private double repayment;
     private String date;
+    private String repaymentDate;
     private String status;
 
-    public Loan(int id, String name, double amount, String duration,
-            double interest, double repayment, String date, String status) {
+    public Loan(int id, String name, String email, double amount, String duration,
+            double interest, double repayment, String date, String repaymentDate, String status) {
         this.id = id;
         this.name = name;
+        this.email = email;
         this.amount = amount;
         this.duration = duration;
         this.interest = interest;
         this.repayment = repayment;
         this.date = date;
+        this.repaymentDate = repaymentDate;
         this.status = status;
     }
 
@@ -57,6 +61,14 @@ public class Loan {
 
     public String getDate() {
         return date;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getRepaymentDate() {
+        return repaymentDate;
     }
 
     public String getStatus() {

@@ -64,7 +64,7 @@ public class KYCController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        idTypeBox.getItems().addAll("NIN", "Driver's License", "International Passport", "Permanent Voter's Card (PVC)");
+        idTypeBox.getItems().addAll("NIN", "Driver's License", "International Passport", "Permanent Voter's Card (PVC)", "Utility Bill");
 
         personalPurposeRadio.setToggleGroup(purposeGroup);
         businessPurposeRadio.setToggleGroup(purposeGroup);

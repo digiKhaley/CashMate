@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="206.0" prefWidth="340.0" style="-fx-background-color: white; -fx-background-radius: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.NoAccountLinkedPopupController">
+    <children>
+        <VBox alignment="CENTER" layoutX="30.0" layoutY="28.0" prefWidth="280.0" spacing="16.0">
+            <children>
+
+                <Label text="Account Not Linked" textFill="#1a2b4a">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <Label text="You haven't linked a payout account yet. Add one to withdraw funds from your wallet." textAlignment="CENTER" textFill="#555555" wrapText="true" />
+
+                <Button defaultButton="true" mnemonicParsing="false" onAction="#handleClose" prefHeight="44.0" prefWidth="280.0" style="-fx-background-color: #147211; -fx-background-radius: 10;" text="Close" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

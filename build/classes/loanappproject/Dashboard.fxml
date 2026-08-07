@@ -1,232 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
+<!--
+    CashMate — Dashboard.fxml
+
+    FIX (this revision): the header HBox has a fixed prefWidth, so when total
+    content needed more room than that, HBox shrank the "Hello," and
+    profileName Labels down toward their (tiny, ellipsis-friendly) default
+    min width instead of touching the fixed-size logo/buttons. Longer names
+    made it worse. Fix: minWidth="-Infinity" (JavaFX's USE_PREF_SIZE) on
+    those Labels and the KYC badge so their min width locks to their natural
+    computed width and they can no longer be compressed. Also removed the
+    too-narrow prefWidth="51.0" on "Hello," so it isn't starting from a
+    clipped size in the first place.
+-->
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.DashboardController">
-
-    <children>
-        <HBox alignment="CENTER" layoutX="50.0" layoutY="45.0" spacing="3.0">
+<AnchorPane fx:id="dashboardRoot" prefHeight="835.0" prefWidth="1540.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loanappproject.DashboardController">
+   <HBox alignment="CENTER" layoutX="119.0" layoutY="42.0" prefWidth="1301.0" spacing="60.0">
+      <children>
+         <HBox alignment="CENTER" spacing="10.0">
             <children>
-                <Button mnemonicParsing="false" onAction="#profile" prefHeight="42.0" prefWidth="24.0" style="-fx-background-color: transparent;">
-                    <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@IMAGES/icons8-profile.gif" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-                <HBox alignment="CENTER" spacing="1.0">
-                    <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hello, ">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Text>
-                        <Label fx:id="profileName" prefHeight="27.0" prefWidth="100.0">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                        </Label>
             
-                    <!-- KYC status badge: at the top of the dashboard -->
-                    <Label fx:id="kycStatusBadge" style="-fx-background-radius: 12; -fx-padding: 4 12; -fx-font-size: 18px; -fx-font-weight: bold;" text="KYC Unverified">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
-                    </children>
-                </HBox>
+                <!-- ===================== HEADER ===================== -->
+            
+                <!-- Avatar circle (click -> profile/logout popup) -->
+                <Button mnemonicParsing="false" onAction="#profile" prefHeight="52.0" prefWidth="52.0" style="-fx-background-color: transparent; -fx-background-radius: 26; -fx-border-radius: 26; -fx-cursor: hand;" text="">
+                  <graphic>
+                     <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@IMAGES/icons8-profile.gif" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <HBox alignment="CENTER">
+                  <children>
+                  
+                      <!-- "Hello," + user's name + KYC badge, stacked under the avatar -->
+                      <!-- FIX: dropped prefWidth="51.0" (too narrow) and added minWidth="-Infinity"
+                           so this Label can't be shrunk below its computed size by the parent HBox. -->
+                      <Label minWidth="-Infinity" prefHeight="27.0" style="-fx-font-size: 18px; -fx-text-fill: #7A7A7A;" text="Hello, ">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                     </Label>
+                  
+                      <!-- FIX: added minWidth="-Infinity" so long names stop truncating to "...". -->
+                      <Label fx:id="profileName" minWidth="-Infinity" prefHeight="30.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #222222;" />
+                  </children>
+               </HBox>
+            
+                <!-- FIX: same squeeze risk applied here (fixed prefWidth doesn't protect against shrinking),
+                     so minWidth="-Infinity" locks it to its natural size too. -->
+                <Label fx:id="kycStatusBadge" alignment="CENTER" minWidth="-Infinity" prefHeight="35.0" prefWidth="154.0" style="-fx-background-color: #f8d7da; -fx-text-fill: #b02a37; -fx-background-radius: 12; -fx-padding: 4 12; -fx-font-size: 18px; -fx-font-weight: bold;" text="KYC Unverified" />
             </children>
-        </HBox>
-        <VBox layoutX="539.0" layoutY="14.0" prefHeight="78.0" prefWidth="274.0">
+         </HBox>
+         <ImageView fitHeight="260.0" fitWidth="477.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@IMAGES/Logo%20+%20Name%20+%20Motto%20(Horizonal).png" />
+            </image>
+         </ImageView>
+         <HBox alignment="CENTER" prefHeight="112.0" prefWidth="440.0" spacing="15.0">
             <children>
-                <ImageView fitHeight="107.0" fitWidth="435.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@IMAGES/Logo%20+%20Name%20+%20Motto%20(Horizonal).png" />
-                    </image>
-                </ImageView>
+            
+                <!-- Withdraw button — takes the OLD Admin position (left of the pair), now green -->
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleWalletBalance" prefHeight="51.0" prefWidth="162.0" style="-fx-background-color: #1BA64C; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand; -fx-padding: 10px;" text="Wallet" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@IMAGES/wallet-line.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+            
+                <!-- Continue as User button — takes the OLD Admin's right-hand slot, still orange -->
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleContinueUser" prefHeight="50.0" prefWidth="230.0" style="-fx-background-color: #F5760C; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-radius: 15; -fx-cursor: hand; -fx-padding: 10px;" text="Continue as User">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@IMAGES/user-3-line%20(1).png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
             </children>
-        </VBox>
+         </HBox>
+      </children>
+   </HBox>
 
-        <HBox layoutX="1147.0" layoutY="39.0" spacing="15.0">
-            <children>
-                <!-- Wallet balance widget: replaces the old "Continue as User" spot.
-                     Clickable - shows a balance breakdown popup (no real balance logic yet). -->
-                <Button mnemonicParsing="false" onAction="#handleWalletBalance" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #147211; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4); -fx-padding: 10;" text="Wallet Balance" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@IMAGES/icons8-dollar-24.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
+
+    <!-- ===================== HERO / POLICY CARD ===================== -->
+
+    <Pane layoutX="117.0" layoutY="160.0" prefHeight="468.0" prefWidth="1306.0" style="-fx-background-color: linear-gradient(to right, #E9F7EF, #FDEEE0); -fx-background-radius: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 18, 0, 0, 6);">
+
+        <Label layoutX="40.0" layoutY="36.0" style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #1F2A24;" text="Loan Repayment Policy">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font></Label>
+
+        <Label layoutX="40.0" layoutY="104.0" prefWidth="770.0" style="-fx-font-size: 18px; -fx-text-fill: #4B4B4B;" text="Loans must be repaid within the approved duration. Repayment dates are fixed and cannot be extended. Any loan not repaid on time will be marked as overdue and may restrict future loan requests." wrapText="true" />
+
+        <!-- Feature row 1: Fast Approval -->
+        <Label alignment="CENTER" layoutX="40.0" layoutY="228.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #1BA64C; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;" text="✓" />
+        <Label layoutX="105.0" layoutY="231.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #222222;" text="Fast Approval" />
+        <Label layoutX="105.0" layoutY="255.0" prefWidth="620.0" style="-fx-font-size: 15px; -fx-text-fill: #6B6B6B;" text="Get Approved in minutes, not days, no wahala, no stress." wrapText="true" />
+
+        <!-- Feature row 2: Flexible Repayment -->
+        <Label alignment="CENTER" layoutX="40.0" layoutY="290.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #F5760C; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;" text="⌚" />
+        <Label layoutX="107.0" layoutY="294.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #222222;" text="Flexible Repayment" />
+        <Label layoutX="107.0" layoutY="318.0" prefWidth="620.0" style="-fx-font-size: 15px; -fx-text-fill: #6B6B6B;" text="Pay back on your own terms with gentle repayment plans." wrapText="true" />
+
+        <!-- Feature row 3: Multi-Currency Support -->
+        <Label alignment="CENTER" layoutX="40.0" layoutY="352.0" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #1BA64C; -fx-background-radius: 10; -fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;" text="₦" />
+        <Label layoutX="110.0" layoutY="348.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #222222;" text="Multi-Currency Support" />
+        <Label layoutX="110.0" layoutY="372.0" prefWidth="620.0" style="-fx-font-size: 15px; -fx-text-fill: #6B6B6B;" text="Borrow in NGN, USD, EUR, or GBP - we got you covered." wrapText="true" />
+
+        <Pane layoutX="679.0" layoutY="237.0" prefHeight="176.0" prefWidth="185.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+            <Pane layoutX="14.0" layoutY="16.0" prefHeight="8.0" prefWidth="8.0" style="-fx-background-color: #1BA64C; -fx-background-radius: 4;" />
+            <Pane layoutX="30.0" layoutY="16.0" prefHeight="8.0" prefWidth="140.0" style="-fx-background-color: #ECECEC; -fx-background-radius: 4;" />
+            <Pane layoutX="14.0" layoutY="38.0" prefHeight="8.0" prefWidth="8.0" style="-fx-background-color: #F5760C; -fx-background-radius: 4;" />
+            <Pane layoutX="30.0" layoutY="38.0" prefHeight="8.0" prefWidth="140.0" style="-fx-background-color: #ECECEC; -fx-background-radius: 4;" />
+            <Pane layoutX="14.0" layoutY="60.0" prefHeight="8.0" prefWidth="8.0" style="-fx-background-color: #1BA64C; -fx-background-radius: 4;" />
+            <Pane layoutX="30.0" layoutY="60.0" prefHeight="8.0" prefWidth="140.0" style="-fx-background-color: #ECECEC; -fx-background-radius: 4;" />
+        </Pane>
+      <ImageView fitHeight="366.0" fitWidth="433.0" layoutX="810.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@IMAGES/222.png" />
+         </image>
+      </ImageView>
+
+    </Pane>
+   <HBox alignment="CENTER" layoutX="117.0" layoutY="666.0" prefHeight="103.0" prefWidth="1314.0" style="-fx-background-color: #fcfcfc; -fx-background-radius: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 18, 0, 0, 6);">
+      <children>
       
-                <!-- Continue as User: moved to where the Admin button used to be.
-                     Admin button/route has been removed from this page entirely. -->
-                <Button lineSpacing="1.0" mnemonicParsing="false" onAction="#handleContinueUser" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: f55a12; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4); -fx-padding: 10;" text="Continue as User" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-            </children>
-        </HBox>
-        <HBox alignment="CENTER" layoutX="161.0" layoutY="740.0" prefHeight="54.0" prefWidth="1288.0" spacing="305.0">
-            <children>
-                <VBox>
-                    <children>
-                        <Label style="-fx-background-color: #08000;" text=" 50k+" textFill="#26b202">
-                            <font>
-                                <Font name="System Bold" size="25.0" />
-                            </font>
-                        </Label>
-                        <Label text="Active Users" />
-                    </children>
-                </VBox>
-                <VBox>
-                    <children>
-                        <Label style="-fx-background-color: #08000;" text=" $2.5M" textFill="#f55a12">
-                            <font>
-                                <Font name="System Bold" size="25.0" />
-                            </font>
-                        </Label>
-                        <Label text="Loans Processed" />
-                    </children>
-                </VBox>
-                <VBox>
-                    <children>
-                        <Label style="-fx-background-color: #08000;" text="   98%" textFill="#26b202">
-                            <font>
-                                <Font name="System Bold" size="25.0" />
-                            </font>
-                        </Label>
-                        <Label text="Satisfaction Rate" />
-                    </children>
-                </VBox>
-                <VBox>
-                    <children>
-                        <Label style="-fx-background-color: #08000;" text="   24/7" textFill="#26b202">
-                            <font>
-                                <Font name="System Bold" size="25.0" />
-                            </font>
-                        </Label>
-                        <Label text="Support Available" />
-                    </children>
-                </VBox>
-            </children>
-        </HBox>
-        <VBox layoutX="55.0" layoutY="130.0" prefHeight="577.0" prefWidth="1426.0">
-            <children>
-                <AnchorPane prefHeight="596.0" prefWidth="1426.0" style="-fx-background-color: linear-gradient(to right, #e8f5e9, #fdf2e9); -fx-background-radius: 20; -fx-padding: 25; -fx-spacing: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);">
-                    <children>
-                        <VBox layoutX="36.0" layoutY="35.0">
-                            <children>
-                                <Label text="Loan Duration Policy">
-                                    <font>
-                                        <Font name="System Bold" size="48.0" />
-                                    </font>
-                                </Label>
-                                <Label prefHeight="27.0" prefWidth="1021.0" text="Repayment PolicyLoans must be repaid within the approved duration. Repayment dates are fixed and cannot be extended.">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                                <Label text="Any loan not repaid on time will be marked as overdue and may restrict future loan requests.">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                            </children>
-                        </VBox>
-                        <HBox layoutX="36.0" layoutY="342.0" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: #008000; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 5;">
-                            <children>
-                                <ImageView fitHeight="25.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@IMAGES/icons8-check-mark-24.png" />
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </HBox>
-                        <HBox layoutX="36.0" layoutY="398.0" prefHeight="36.0" prefWidth="35.0" style="-fx-background-color: #f55a12; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 5;">
-                            <children>
-                                <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@IMAGES/icons8-clock-24.png" />
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </HBox>
-                        <HBox layoutX="36.0" layoutY="449.0" prefHeight="36.0" prefWidth="36.0" style="-fx-background-color: #008000; -fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 5;">
-                            <children>
-                                <ImageView fitHeight="24.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@IMAGES/icons8-dollar-24.png" />
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </HBox>
-                        <VBox layoutX="128.0" layoutY="232.0">
-                            <children>
-                                <Label text="Fast Approval">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                </Label>
-                                <Label text="Get Approved in minutes, not days, no wahala, no stress.">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                            </children>
-                        </VBox>
-                        <VBox layoutX="128.0" layoutY="378.0">
-                            <children>
-                                <Label text="Flexible Repayment">
-                                    <font>
-                                        <Font name="System Bold" size="14.0" />
-                                    </font>
-                                </Label>
-                                <Label text="Pay back on your own terms with gentle repayment plans." />
-                            </children>
-                        </VBox>
-                        <VBox layoutX="163.0" layoutY="429.0">
-                            <children>
-                                <Label text="Multi-Currency Support">
-                                    <font>
-                                        <Font name="System Bold" size="14.0" />
-                                    </font>
-                                </Label>
-                                <Label text="Borrow in ₦, $, € , or £ - we got you covered." />
-                            </children>
-                        </VBox>
-                        <VBox layoutX="432.0" layoutY="118.0" />
-                          <ImageView fitHeight="401.0" fitWidth="523.0" layoutX="853.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                  <Image url="@IMAGES/222.png" />
-                              </image>
-                          </ImageView>
-                    </children>
-                </AnchorPane>
-            </children>
-        </VBox>
+      
+          <!-- ===================== STATS ROW ===================== -->
+      
+          <VBox alignment="CENTER" prefWidth="365.0" spacing="6.0">
+              <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #1BA64C;" text="50k+" />
+              <Label style="-fx-font-size: 14px; -fx-text-fill: #6B6B6B;" text="Active Users" />
+          </VBox>
+      
+          <VBox alignment="CENTER" prefWidth="365.0" spacing="6.0">
+              <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #F5760C;" text="\$2.5M" />
+              <Label style="-fx-font-size: 14px; -fx-text-fill: #6B6B6B;" text="Loans Processed" />
+          </VBox>
+      
+          <VBox alignment="CENTER" prefWidth="365.0" spacing="6.0">
+              <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #1BA64C;" text="98%" />
+              <Label style="-fx-font-size: 14px; -fx-text-fill: #6B6B6B;" text="Satisfaction Rate" />
+          </VBox>
+      
+          <VBox alignment="CENTER" prefWidth="365.0" spacing="6.0">
+              <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #F5760C;" text="24/7" />
+              <Label style="-fx-font-size: 14px; -fx-text-fill: #6B6B6B;" text="Support Available" />
+          </VBox>
+      </children>
+   </HBox>
 
-    </children>
 </AnchorPane>
